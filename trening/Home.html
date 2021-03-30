@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="INTUITIVE">
+  <meta name="description" content="">
+  <meta name="page_type" content="np-template-header-footer-from-plugin">
+  <title>Home</title>
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="Home.css" media="screen">
+  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+  <meta name="generator" content="Nicepage 3.10.2, nicepage.com">
+  <style>
+    /* The MIT License (MIT) Copyright (c) 2014 Toby */
+    /* demo only */
+    .flex {
+      display: flex;
+    }
+
+    .align-center {
+      justify-content: center;
+    }
+
+    .align-vert,
+    .align-vert.align-center {
+      align-items: center;
+    }
+
+    /* end demo */
+    .modal {
+      display: none;
+    }
+
+    .modal--show,
+    .modal--hide {
+      display: flex;
+    }
+
+    /* classes fired by js for animation control */
+    /* This is on the wrapper for the whole modal */
+    .modal--align {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+
+    .modal__container {
+      position: relative;
+      width: 100%;
+      max-width: 1300px;
+      padding: 20px 20px 0px 20px;
+      margin: 12px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+    }
+
+    /* As there is no href to avoid the hash being added to the URL when clicked we add a pointer */
+    /* This 'x' is hidden from screen readers as there is an accessible close button in the modal */
+    .modal__close--x:hover {
+      cursor: pointer;
+    }
+
+    /* Animations */
+    /* Open */
+    .modal.modal--show {
+      animation: modal-open 0.3s;
+    }
+
+    @keyframes modal-open {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Close */
+    .modal.modal--hide {
+      animation: modal-close 0.3s;
+    }
+
+    @keyframes modal-close {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .modal__close--x {
+      position: absolute;
+      line-height: 19px;
+      top: 10px;
+      right: 10px;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+      color: #000;
+      text-shadow: 0 1px 0 #fff;
+      font-family: "Open Sans", "Arial", "sans-serif";
+      opacity: .2;
+    }
+
+    .modal {
+      text-align: center;
+    }
+  </style>
+  <style>
+    .modal__container [class*="section"] {
+      display: block !important;
+      overflow: hidden;
+    }
+
+    .modal__close--x {
+      z-index: 1;
+    }
+  </style>
+  <script> var buttonSelector = 'a[href*="-popup"]',
+      parseId = function (href) { return href.replace('-popup', '').replace('#', ''); };
+    window.onload = function () {
+      $('body').on('click', buttonSelector, function (event) {
+        var id = parseId(event.currentTarget.getAttribute('href'));
+        var modalId = 'modal-' + id;
+        if ($('#' + modalId).length === 0) {
+          $('body').append('<div class="flex align-center align-vert modal modal--align" id="' + modalId + '">' +
+            '    <div class="modal__container">' +
+            '        <span class="modal__close modal__close--x" aria-hidden="true">×</span>' +
+            '        ' + document.getElementById(id).outerHTML +
+            '    </div>' +
+            '</div>');
+        }
+        $('#' + modalId).addClass('modal--show');
+      });
+      var closeModal = function (modal) {
+        modal.removeClass('modal--show');
+        modal.addClass('modal--hide');
+        var afterAnimation = function () {
+          modal.removeClass('modal--hide');
+        };
+        // This listens for the CSS animations to finish and then hides the modal
+        modal[0].addEventListener("webkitAnimationEnd", afterAnimation, false);
+        modal[0].addEventListener("oAnimationEnd", afterAnimation, false);
+        modal[0].addEventListener("msAnimationEnd", afterAnimation, false);
+        modal[0].addEventListener("animationend", afterAnimation, false);
+        setTimeout(afterAnimation, 400);
+      }
+      // Close the modal with any element with class 'modal__close'
+      $('body').on('click', '.modal__close', function (e) {
+        closeModal($(e.currentTarget).closest('.modal'));
+      });
+      // Click outside of the modal and close it
+      window.onclick = function (e) {
+        if ($(e.target).is('.modal')) {
+          closeModal($(e.target));
+        }
+      }
+      // Use the escape key to close modal
+      document.onkeyup = function (e) {
+        e = e || window.event;
+        if (e.keyCode == 27 && $('.modal--show').length === 1) {
+          closeModal($('.modal--show'));
+        }
+      }
+    };
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var buttons = document.querySelectorAll(buttonSelector);
+      for (var i = 0; i < buttons.length; i++) {
+        var section = document.getElementById(parseId(buttons[i].getAttribute('href')));
+        if (section) {
+          section.style.display = 'none';
+        }
+      }
+    });</script>
+
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "index.html"
+}</script>
+  <meta property="og:title" content="Home">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#478ac9">
+  <link rel="canonical" href="index.html">
+  <meta property="og:url" content="index.html">
+</head>
+
+<body class="u-body u-custom-color-9 u-overlap">
+  <header class="u-border-2 u-border-custom-color-1 u-clearfix u-header u-image u-shading u-header" id="sec-2313"
+    data-image-width="1131" data-image-height="1600">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+            href="#carousel_69a1">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+            </svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs>
+                <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                  <rect y="1" width="16" height="2"></rect>
+                  <rect y="7" width="16" height="2"></rect>
+                  <rect y="13" width="16" height="2"></rect>
+                </symbol>
+              </defs>
+            </svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-custom-color-12 u-text-hover-custom-color-12"
+                href="Home.html" style="padding: 10px 20px;">Home</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-custom-color-12 u-text-hover-custom-color-12"
+                href="About.html" style="padding: 10px 20px;">About</a>
+            </li>
+          </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html"
+                    style="padding: 10px 20px;">Home</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html"
+                    style="padding: 10px 20px;">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <section class="u-align-center u-clearfix u-image u-section-1" src="" id="sec-d197" data-image-width="1131"
+    data-image-height="1600">
+    <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-sheet-1">
+      <div
+        class="u-custom-color-9 u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-opacity u-opacity-30 u-shape u-shape-circle u-shape-1">
+      </div>
+      <div class="u-container-style u-expanded-width-xs u-group u-image u-image-1" data-image-width="416"
+        data-image-height="200">
+        <div class="u-container-layout u-container-layout-1">
+          <img src="images/giphy1.gif" alt="" class="u-image u-image-default u-preserve-proportions u-image-2"
+            data-image-width="100" data-image-height="230">
+          <img src="images/giphy1.gif" alt="" class="u-image u-image-default u-preserve-proportions u-image-3"
+            data-image-width="100" data-image-height="230">
+          <img src="images/giphy1.gif" alt="" class="u-image u-image-default u-preserve-proportions u-image-4"
+            data-image-width="100" data-image-height="230">
+          <img src="images/giphy1.gif" alt="" class="u-image u-image-default u-preserve-proportions u-image-5"
+            data-image-width="100" data-image-height="230">
+          <a href="#uputstvo-popup"
+            class="u-btn u-button-style u-custom-color-12 u-hover-custom-color-13 u-btn-1">Pročitaj me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-2" id="uputstvo" data-image-width="408" data-image-height="164">
+    <div class="u-clearfix u-sheet u-sheet-1"><span
+        class="u-icon u-icon-rectangle u-opacity u-opacity-70 u-text-custom-color-13 u-icon-1"><svg
+          class="u-svg-link u-flip-horizontal" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512.001 512.001"
+          style="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-3423"></use>
+        </svg><svg class="u-svg-content" viewBox="0 0 512.001 512.001" x="0px" y="0px" id="svg-3423"
+          style="enable-background:new 0 0 512.001 512.001;">
+          <g>
+            <path
+              d="M416.363,193.81h-3.88c-6.773-37.267-38.31-66.011-76.883-68.499c-3.229-23.185-13.967-44.687-31.033-61.688   c-20.645-20.566-47.878-31.893-76.685-31.893c-59.376,0-107.883,47.428-109.628,106.39C52.664,140.374,0,194.435,0,260.566   c0,67.557,54.962,122.519,122.519,122.519h143.79l125.827,97.186v-97.186h25.228c25.411,0,49.265-9.933,67.167-27.969   c17.901-18.034,27.656-41.964,27.468-67.384C511.613,235.943,468.712,193.81,416.363,193.81z M463.239,333.982   c-12.229,12.319-28.521,19.103-45.876,19.103h-55.228v66.108l-85.591-66.108H122.519C71.504,353.085,30,311.581,30,260.566   s41.504-92.519,92.519-92.519h25.688v-26.639c0-43.934,35.743-79.677,79.677-79.677c20.814,0,40.529,8.22,55.512,23.146   c14.983,14.926,23.235,34.581,23.235,55.343v15.146l23.596-0.229c29.563,0.038,53.604,24.102,53.604,53.674v15h32.533   c35.929,0,65.372,28.775,65.635,64.145C482.127,305.318,475.465,321.665,463.239,333.982z">
+            </path>
+          </g>
+        </svg></span>
+      <div class="u-list u-repeater u-list-1">
+        <div
+          class="u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-1">
+          <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+            <h3 class="u-align-center u-text u-text-1">
+              <span style="font-style: italic;">
+                <br>
+              </span>Allah
+            </h3>
+            <div class="u-border-4 u-border-palette-3-base u-line u-line-horizontal u-line-1"></div>
+            <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-1"
+              data-image-width="1133" data-image-height="1600" src="images/Allahd...jpg" data-animation-name="pulse"
+              data-animation-duration="1000" data-animation-delay="0" data-animation-direction=""
+              data-href="Home.html#uputstvo" data-page-id="265508">
+            <p class="u-align-center u-text u-text-2">
+              <span style="font-size: 0.5rem;">On je Allah – jedan!&nbsp;<br>Allah je Utočište svemu!&nbsp;<br>Nije
+                rodio i rođen nije,&nbsp;<br>i niko Mu ravan nije!<br>♡
+              </span>
+              <br>
+            </p>
+            <a href="#ime1-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-1">
+              <span style="font-size: 1.125rem; font-weight: 700;">&nbsp; الله&nbsp;&nbsp;</span>
+              <br>
+            </a>
+          </div>
+        </div>
+      </div>
+      <h3 class="u-align-center u-text u-text-3">Klikom na <span style="font-weight: 700;">sliku</span>
+        <br>uvećat ćete je
+      </h3>
+      <h3 class="u-align-center u-text u-text-4">Klikom na <span style="font-weight: 700;">žuti </span>button<br>sa
+        Gospodarevim imenom<br>otvorit će se tekst za bolje pamćenje<br>i razumijevanje imena.
+      </h3>
+      <h3 class="u-align-center u-text u-text-default-lg u-text-default-xl u-text-5">Više o ideji ovog projekta<br>i
+        korištene izvore literature<br>možete pročitati u <span
+          style="font-weight: 700; text-decoration: underline !important;">about </span>sekciji<br>na vrhu
+        stranice<br>kada izađete iz ovog popup-a.
+      </h3>
+      <h3 class="u-align-center u-text u-text-default-lg u-text-default-xl u-text-6">Kada&nbsp;<br>ste
+        pročitali&nbsp;<br>"about" sekciju<br>i sve sa ovog popup-a,<br>možete krenuti sa učenjem<br>Allahovih lijepih
+        imena&nbsp;&nbsp;♡
+      </h3>
+      <div class="u-border-5 u-border-grey-75 u-flip-horizontal u-shape u-shape-svg u-text-custom-color-13 u-shape-1">
+        <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4b20"></use>
+        </svg>
+        <svg class="u-svg-content" viewBox="-2.5 -2.5 165 165" x="0px" y="0px" id="svg-4b20"
+          style="enable-background:new 0 0 160 160;">
+          <g>
+            <g>
+              <path d="M0.3,6.4L60.6,157c0.7,1.7,2.3,2.8,4.2,2.9c1.9,0.1,3.6-0.9,4.4-2.6l19.7-40.6l41.9,41.9c0.9,0.9,2.1,1.4,3.3,1.4
+			s2.4-0.5,3.3-1.4l21.3-21.3c0.9-0.9,1.4-2.1,1.4-3.3s-0.5-2.4-1.4-3.3l-41.9-41.9l40.6-19.7c1.6-0.8,2.7-2.6,2.6-4.4
+			c0-1.9-1.2-3.5-2.9-4.2L6.5,0.3C4.7-0.4,2.7,0,1.4,1.3C0,2.6-0.4,4.6,0.3,6.4z"></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div
+        class="u-border-5 u-border-grey-75 u-flip-horizontal u-flip-vertical u-shape u-shape-svg u-text-custom-color-13 u-shape-2">
+        <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-c795"></use>
+        </svg>
+        <svg class="u-svg-content" viewBox="-2.5 -2.5 165 165" x="0px" y="0px" id="svg-c795"
+          style="enable-background:new 0 0 160 160;">
+          <g>
+            <g>
+              <path d="M0.3,6.4L60.6,157c0.7,1.7,2.3,2.8,4.2,2.9c1.9,0.1,3.6-0.9,4.4-2.6l19.7-40.6l41.9,41.9c0.9,0.9,2.1,1.4,3.3,1.4
+			s2.4-0.5,3.3-1.4l21.3-21.3c0.9-0.9,1.4-2.1,1.4-3.3s-0.5-2.4-1.4-3.3l-41.9-41.9l40.6-19.7c1.6-0.8,2.7-2.6,2.6-4.4
+			c0-1.9-1.2-3.5-2.9-4.2L6.5,0.3C4.7-0.4,2.7,0,1.4,1.3C0,2.6-0.4,4.6,0.3,6.4z"></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-lightbox u-section-3" id="carousel_1ab1" data-image-width="408"
+    data-image-height="164">
+    <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+      <div class="u-list u-repeater u-list-1">
+        <div
+          class="u-container-style u-custom-background u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-1">
+          <div class="u-container-layout u-similar-container u-container-layout-1">
+            <h3 class="u-align-center u-text u-text-1">
+              <span style="font-style: italic;">
+                <br>
+              </span>Allah
+            </h3>
+            <div class="u-border-4 u-border-palette-3-base u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
+            <img alt=""
+              class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-preserve-proportions u-image-1"
+              data-image-width="1133" data-image-height="1600" src="images/Allahd...jpg" data-animation-name="pulse"
+              data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
+            <p class="u-align-center u-text u-text-2">On je Allah – jedan!&nbsp;<br>Allah je Utočište
+              svemu!&nbsp;<br>Nije rodio i rođen nije,&nbsp;<br>i niko Mu ravan nije!<br>♡
+            </p>
+            <a href="#ime1-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-1">
+              <span style="font-size: 1.25rem; font-weight: 700;">الله&nbsp;&nbsp;<span
+                  style="font-weight: 700;"></span>
+              </span>
+              <br>
+            </a>
+          </div>
+        </div>
+        <div
+          class="u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-2">
+          <div class="u-container-layout u-similar-container u-container-layout-2">
+            <h3 class="u-align-center u-text u-text-3">&nbsp;Er-Rahmān&nbsp;<br>Er-Rahīm
+            </h3>
+            <div class="u-border-4 u-border-palette-3-base u-expanded-width-xs u-line u-line-horizontal u-line-2"></div>
+            <img alt=""
+              class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-preserve-proportions u-image-2"
+              data-image-width="1138" data-image-height="1600" src="images/MilostiviSamilosni.jpg"
+              data-animation-name="pulse" data-animation-duration="1000" data-animation-delay="0"
+              data-animation-direction="">
+            <p class="u-align-center u-text u-text-4">Zato što si Ti&nbsp;<br>Er-Rahmān i Er-Rahīm,&nbsp;<br>znam da ćeš
+              mi se smilovati&nbsp;<br>i da ćeš mi oprostiti.&nbsp;<br>❤
+            </p>
+            <a href="#ime2-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-2">
+              <span style="font-weight: 700; font-size: 0.75rem;">الرّحمان&nbsp;الرّحيم&nbsp;</span>
+              <br>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-lightbox u-section-4" id="sec-6e8d" data-image-width="313"
+    data-image-height="210">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-repeater u-list-1">
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-1">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-1">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-1">
+              <div class="u-container-layout u-container-layout-2">
+                <div
+                  class="u-absolute-hcenter u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-1">
+                </div>
+                <h3 class="u-align-center u-text u-text-1">El-Melik<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-1"
+                  data-image-width="914" data-image-height="1281" src="images/Vladar.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-2">Zato što si Ti&nbsp; El- Me​lik,<br>&nbsp;ja se prepušta​m
+                  Tvojoj vlasti i&nbsp;<br>moja duša je ponizna pred&nbsp;<br>Tobom.&nbsp;❤
+                </p>
+                <a href="#ime4-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-1">المَلِك&nbsp;<br>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-2">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-3">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-2">
+              <div class="u-container-layout u-container-layout-4">
+                <div
+                  class="u-absolute-hcenter u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-2">
+                </div>
+                <h3 class="u-align-center u-text u-text-3">El-Quddūs<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-2"
+                  data-image-width="1147" data-image-height="1600" src="images/Cisti.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-4">Zato što si ti El-Quddūs,<br>pohrlih svoju dušu&nbsp;<br>da
+                  očistim, jer spoznah da ću pred Tobom na Danu<br>sudnjem stajati. ❤️
+                </p>
+                <a href="#ime5-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-2">
+                  <span>القُدّوس&nbsp;</span>
+                  <br>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-3">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-5">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-3">
+              <div class="u-container-layout u-container-layout-6">
+                <div
+                  class="u-absolute-hcenter-lg u-absolute-hcenter-md u-absolute-hcenter-sm u-absolute-hcenter-xs u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-3">
+                </div>
+                <h3 class="u-align-center u-text u-text-5">Es-Selam<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-3"
+                  data-image-width="1131" data-image-height="1599" src="images/IzvorSmirenostiISpasa.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-6">Zato što si ti&nbsp;<br>Es-Selam,&nbsp;kod Tebe
+                  smiraj&nbsp;<br>duši&nbsp;nalazim i<br>samo od Tebe pomoć tražim ❤
+                </p>
+                <a href="#ime6-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-3">
+                  <span>السّلام&nbsp;</span>
+                  <br>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-4">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-7">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-4">
+              <div class="u-container-layout u-container-layout-8">
+                <div
+                  class="u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-4">
+                </div>
+                <h3 class="u-align-center u-text u-text-7">El-Mu'min<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-4"
+                  data-image-width="1132" data-image-height="1600" src="images/PotvrdjujeObecanjeIDajeSigurnost.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-8">Zato što si Ti, El-Mu'min, ka<br>Tebi hrlim! Jer,
+                  doista,&nbsp;<br>samo kod Tebe je istinska<br>sigurnost, i Tebi se, Jedinom, prepuštam..
+                </p>
+                <a href="#ime7-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-4">
+                  <span>المُؤمن&nbsp;</span>
+                  <br>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-5">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-9">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-5">
+              <div class="u-container-layout u-container-layout-10">
+                <div
+                  class="u-absolute-hcenter-sm u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-5">
+                </div>
+                <h3 class="u-align-center u-text u-text-9">El-Muhejmin<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-5"
+                  data-image-width="1143" data-image-height="1600" src="images/NadSvimBdi.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-10">Zato sto si ti&nbsp;<br>El-Muhejmin,&nbsp;<br>Tebi
+                  prepuštam&nbsp;<br>svoje brige,&nbsp;<br>i svoje stanje.
+                </p>
+                <a href="#ime8-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-5">
+                  <span>المُهَيْمِن&nbsp;</span>
+                  <br>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-6">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-11">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-6">
+              <div class="u-container-layout u-container-layout-12">
+                <div
+                  class="u-absolute-hcenter-md u-absolute-hcenter-sm u-absolute-hcenter-xs u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-6">
+                </div>
+                <h3 class="u-align-center u-text u-text-11">El-'Aziz<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-6"
+                  data-image-width="1143" data-image-height="1600" src="images/Silni.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-12">Zato što si Ti El-'Aziz,&nbsp;<br>svoju snagu tražim samo od
+                  Tebe i samo (k)od Tebe je svo moje&nbsp;<br>dostojanstvo.
+                </p>
+                <a href="#ime9-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-6">
+                  <span>العزيز&nbsp;</span>
+                  <br>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-7">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-13">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-7">
+              <div class="u-container-layout u-container-layout-14">
+                <div
+                  class="u-absolute-hcenter-lg u-absolute-hcenter-md u-absolute-hcenter-sm u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-7">
+                </div>
+                <h3 class="u-align-center u-text u-text-13">El-Džebbar<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-7"
+                  data-image-width="1138" data-image-height="1600" src="images/SveStvorioIStvara.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-14">Zato što si Ti&nbsp;<br>El-Džebbar,&nbsp;ponizan biti
+                  ću,<br>jer uzvišenost i<br>gordost samo Tebi<br>pripadaju.
+                </p>
+                <a href="#ime10-popup" class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-7">
+                  <span>الجبّار&nbsp;</span>
+                  <br>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-8">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-15">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-8">
+              <div class="u-container-layout u-container-layout-16">
+                <div
+                  class="u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-8">
+                </div>
+                <h3 class="u-align-center u-text u-text-15">El- Mutekebbir<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-8"
+                  data-image-width="914" data-image-height="1279" src="images/BeskrajnoVeliki.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-16">Zato što si Ti El-Mutekebbir, ja se ne
+                  bojim&nbsp;<br>nepravde robova Tvojih i od Tebe se nadam samo dobru. ❤
+                </p>
+                <a href="#ime11-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-8">المُتَكَبِّر</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-9">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-17">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-9">
+              <div class="u-container-layout u-container-layout-18">
+                <div
+                  class="u-absolute-hcenter-xs u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-9">
+                </div>
+                <h3 class="u-align-center u-text u-text-17">El-Hāliq<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-9"
+                  data-image-width="1138" data-image-height="1600" src="images/SveStvorioIStvara.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-18">Zato što si Ti El-Hāliq,<br>kako da Ti zahvalnost
+                  i<br>poniznost ne iskažem kada si me stvorio i uputu mi<br>darovao. ❤️
+                </p>
+                <a href="#ime12-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-9">الخالق</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-10">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-19">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-10">
+              <div class="u-container-layout u-container-layout-20">
+                <div
+                  class="u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-10">
+                </div>
+                <h3 class="u-align-center u-text u-text-19">El-Bari'<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-10"
+                  data-image-width="1137" data-image-height="1599" src="images/DivnoStvara.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-20">Zato što si ti El-Bari',&nbsp;<br>moja duša, tijelo i srce
+                  su<br>samo Tebi ponizni,&nbsp;<br>jer me Ti, kao i sve, divno<br>stvori.
+                </p>
+                <a href="#ime13-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-10">البارئ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-11">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-21">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-11">
+              <div class="u-container-layout u-container-layout-22">
+                <div
+                  class="u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-11">
+                </div>
+                <h3 class="u-align-center u-text u-text-21">El-Musavvir<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-11"
+                  data-image-width="1141" data-image-height="1600" src="images/DajeNajljepseOblike.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-22">Zato što si Ti El-Musavvir,<br>Tvojim stvaranjem zadovoljan
+                  biti ću, jer je to&nbsp;<br>Tvoj izbor koji je za mene<br>najbolji...
+                </p>
+                <a href="#ime14-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-11">المُصَوِّر</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-video-cover u-list-item-12">
+          <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-23">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-12">
+              <div class="u-container-layout u-container-layout-24">
+                <div
+                  class="u-border-4 u-border-palette-3-base u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-line u-line-horizontal u-line-12">
+                </div>
+                <h3 class="u-align-center u-text u-text-23">El-Gaffar<br>
+                </h3>
+                <img alt=""
+                  class="u-border-2 u-border-grey-75 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-default u-image-12"
+                  data-image-width="1135" data-image-height="1600" src="images/MnogoPrasta.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-24">Zato što si ti El-Gaffar,&nbsp;<br>Onaj koji mnogo
+                  prašta,&nbsp;<br>Tebi pokajanje upućujem,<br>Tebi istigfar&nbsp;<br>činim.
+                </p>
+                <a href="#ime15-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-12">الغفّار<span
+                    style="font-size: 1.125rem;"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-5" id="ime1" data-image-width="359" data-image-height="612">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-40 u-radius-50 u-shape-round u-group-1">
+        <div class="u-container-layout u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">1. ALLAH
+            (اللّٰه) <br>
+            <br>Zato što si Ti Allah, moja je duša poletna.💓 <br>
+            <br>💬Dugo sinoć nisam mogla zaspati. Razmišljala sam koji je to najljepši način da drugima predstavim ovo
+            vlastito ime. Jer ono to i jeste - najljepše vlastito ime ikada. <br>
+            <br>📌Allah je ime koje ukazuje na Biće koje se istinski obožava i ime koje upućuje na sva ostala Allahova
+            lijepa imena. Osnova imena je riječ el-ilah(bog, božanstvo). <br>
+            <br>📌Ime "Allah" stoji iznad svih drugih imena i nikada niko nije nazvan tim imenom osim Allah. ("Znaš li
+            da ime Njegovo ima iko?" Merjem, 65) <br>
+            <br>📌Sibevejh, arapski lingvista, uzvišeno ime "Allah" definirao je kao imenicu svih imenica. <br>
+            <br>📌 Ovo ime se najviše spominje u Kur'anu - više od 2200 puta. <br>
+            <br>📌 Najuzvišenija rečenica koja sadrži ovo ime je "la ilahe illallah"(nema boga osim Allaha; nema boga
+            koji je dostojan da se obožava osim Allah). <br>Dio sahih-hadisa glasi:"Kada bi se sedam nebesa i sedam
+            zemalja i sva stvorenja na njima stavila na jedan tas vage, a riječi 'la ilahe illallah' na drugi, riječi
+            'la ilahe illallah' bi prevagnule." To su riječi uspjeha na oba svijeta. <br>(Zadatak za tebe i za nas:
+            pokušajmo ih što češće svjesno izgovarati. Podsjetnik: za izgovor ovih najvažnijih riječi nije potrebno
+            pomjeranje nijednog drugog dijela govornog aparata osim jezika, tako da je potpuno neprimjetno i moguće u
+            svim prilikama. Koliko sve te prilike iskorištavamo?) <br>
+            <br> 📌Allahovo najveće ime? <br>Rekao je Poslanik, as: "Nijedan musliman nikada neće doviti njime, a da mu
+            se Allah neće odazvati."(Ahmed, Tirmizi...) Veliki je broj mišljenja koje je to ime. Neki kažu da je upravo
+            "Allah" najveće od svih imena. Neki kažu da to nije samo jedno određeno ime. Neki kažu da je to svako ime
+            kojim rob iz sveg srca, onda kada je u potpunosti predan Allahu i srcem i mislima, zamoli Njega Uzvišenog za
+            nešto. <br>
+            <br>💬Na kraju sam shvatila da je nemoguće i, za naš mozak skromnog kapaciteta, nedokučivo značenje imena
+            Allah. Ne možemo ga pojmiti, koliko god se trudili. Specifično je i toliko savršeno. Zbog toga na nas i
+            ostavlja utisak veličine i zapanjenosti, divljenja i težnje. Ne možemo ga razumom objasniti, ali je naša
+            duša sposobna da osjeti svu tu ljepotu. Stvari duše se zato ni ne trebaju objašnjavati, jer za tim nema
+            potrebe. Naš ruh je dio kojeg je Uzvišeni Gospodar u nas udahnuo. Zato i težnja ka Njemu, ka savršenosti.
+            Ostaje nam da čežnjivo čekamo naš ponovni sastanak trudeći se da Onaj koji je savršen bude zadovoljan nama
+            nesavršenima. <br>
+            <br>"Takav vam je Allah, moj Gospodar, na Njega se oslanjam i Njemu se obraćam."(Sura Šura, 10) <br>
+            <br>💭Pitanja za razmišljanje: <br>1. Šta riječ "Allah" predstavlja u mom životu? <br>2. U kojim i kakvim
+            sve prilikama je koristim? <br>3. Koje me emocije prožimaju kada izgovorim riječ "Allah"? <br>4. Koliko
+            često nisam svjestan/na da je izgovorim, tj. koliko je često izgovorim automatski, bez razmišljanja o njoj?
+            <br>5. Da li se često zaklinjem Bogom? <br>6. ... <br>
+            <br>Postavljaj sam/a sebi i druga pitanja i ne zaboravi da zapisuješ svoja promišljanja.💓<br>
+            <br>Mnogo praktikujmo preporuku iz ajeta:&nbsp;<br>
+            <br>"... a (Allah) k Sebi upućuje onoga koji Mu se pokajnički obraća, one koji vjeruju i čija se srca kada
+            se Allah spomene smiruju, a srca se doista, kada se Allah spomene, smiruju."(Sura R'ad, 27-28), kao i
+            preporuku iz hadisa:&nbsp;<br>"Dvije riječi omiljene Allahu, lahke na jeziku, a teške na vagi, to su:
+            Subhanallahi ve bi hamdihi, subhanallahil-azim.” (Buhari)&nbsp;<br>
+            <br>🌺"... i Allaha mnogo spominjite da biste postigli što želite."(Sura Džuma, 10)<br>
+            <br>Nadam se da ste uživali razmišljajući o Allahovom Imenu i da vam se olovka&nbsp;<br>barem malčice
+            istrošila.&nbsp;<br>
+            <br>💭Zašto potenciramo zapisivanje?&nbsp;<br>Zato što se Milostivi zaklinje perom u suri koja nosi
+            identičan naziv.&nbsp;<br>Zato što u Knjizi stoji:"...Gospodar tvoj je Plemenit, Onaj koji je
+            (čovjeka)&nbsp;<br>podučio peru..."(Sura 'Aleq, 3-4)&nbsp;<br>Podučio nas je, pa iskažimo Mu zahvalnost
+            koristeći tu sposobnost.&nbsp;<br>A i biće divno nekad kasnije vraćati se na zapisane tragove naših
+            misli.💕<br>
+          </p>
+        </div>
+      </div>
+      <img src="images/viber_image_2021-01-20_13-43-02.jpg" alt=""
+        class="u-expanded-width-xs u-image u-image-default u-opacity u-opacity-70 u-image-1" data-image-width="902"
+        data-image-height="1599">
+    </div>
+  </section>
+  <section class="u-align-left u-clearfix u-image u-section-6" id="ime2" data-image-width="713" data-image-height="466">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-50 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">2. Er-Rahmān (الرَّحْمٰنُ)&nbsp;<br>3. Er-Rahīm (ُالرَّحِيم)&nbsp;<br>
+            <br>💬 Sjedne insan često sam sa sobom da raščisti neke stvari. Vraćaš film unazad, a ono, ima šta i da
+            vidiš: problemi, grijesi, obuzme te briga i tuga; a onda, zastaneš i sjetiš se.&nbsp;<br>On je, Er-Rahmān -
+            Svemilosni i Er-Rahīm - Samilosni.❤&nbsp;<br>📌Jezičko značenje riječi rahmet je 'milost, nježnost,
+            naklonjenost, rodbinska veza ili maternica'.&nbsp;<br>Oba imena su izvedena iz riječi rahmet, samo
+            uveličano.&nbsp;<br>Ime Er-Rahmān je većeg stepena, sveobuhvatnije od Er-Rahīm.&nbsp;<br>📌 Er-Rahmān
+            (Milostivi) i Er-Rahīm (Samilosni) su Allahova uzvišena imena koja se često spominju u časnom
+            Kur’anu.&nbsp;<br>📌 Ova dva Allahova lijepa imena su od posebnog značaja i važnosti. To su imena kojima je
+            Uzvišeni Allah u Svojoj plemenitoj Knjizi otpočeo suru El-Fatiha i sve ostale sure u kojima je objavio uputu
+            i jasne dokaze.&nbsp;&nbsp;<br>📌 Na mnogim mjestima u Kur’anu ova dva Allahova imena navedena su skupa i
+            oba ukazuju na Allahovu dž.š., osobinu milosti. S tim što, kada dođu skupa, onda ukazuju na postojanje
+            rahmeta kao Allahovog svojstva i djela. Tako je Er-Rahmān - Onaj kojem je rahmet osobina, a Er-Rahīm - Onaj
+            koji je Milostiv prema Svojim robovima. Dokaz tome su riječi Uzvišenog: ,,On vas blagosilja, a i meleki
+            Njegovi, da bi vas iz tmina na svjetlo izveo, On je prema vjernicima milostiv” (El-Ahzab, 43
+            ajet);&nbsp;<br>“On je prema njima blag i milostiv” (Et-Tevbe, 117 ajet).&nbsp;<br>📌 Jedna kur'anska sura
+            nosi naziv "Er-Rahmān"&nbsp;<br>📌 Ime Er-Rahmān se u Kur'anu spominje 57 puta, a Er-Rahīm 115
+            puta.&nbsp;<br>📌 Uzvišeni Allah u Kur'anu kaže: ,,Milostivi poučava Kur’anu” (Er-Rahmān, 1-2
+            ajet)&nbsp;<br>📌 „Onima koji su milostivi smilovat će se Allah svemilosni.“ (Hadis)&nbsp;<br>📌 Uzvišeni
+            Allah u hadisu kudsijji je rekao: „Budite milostivi prema onima koji su na Zemlji, pa će se vama smilovati
+            Onaj koji je na nebu.“&nbsp;<br>💬 Ima nešto u tom imenu Er-Rahmān što ti srce smiri i da ti
+            nadu.&nbsp;<br>Jednostavno, shvatiš da si ti samo insan i da je nemoguće da ne pogriješiš u svome životu,
+            shvatiš da je to u redu dokle god se kaješ i nastojiš popraviti ono što se desilo. Ponekad budeš ljut na
+            sebe do te mjere da misliš kako je sve u tvome životu propalo, da nema više nade, a zaboraviš na Gospodara
+            koji je Er-Rāhman i Er-Rahīm.&nbsp;<br>Zaboraviš na Gospodara Koji je prema tebi milostiviji od tvoje majke
+            i Koji tvoj život može promijeniti dok trepneš okom.&nbsp;<br>On iz svoje milosti prema tebi kaže: ,,Budi, i
+            ono bude." Dovoljna je jedna iskrena sedžda, dova, uzdah ili suza da Er-Rahmān tvoj život promijeni u
+            potpunosti.&nbsp;<br>Često samu sebe podsjetim na jedan divan kur'anski ajet, u kome Allah dž.š., kaže:
+            ,,Gospodar vaš je sam Sebi propisao da bude milostiv.” (El-En‘am, 54 ajet) . Zastaneš, razmišljaš. Imaš
+            Gospodara koji je sam Sebi propisao da bude milostiv, pa šta je onda s nama ljudima?&nbsp;Zašto mi nemamo
+            milosti jedni prema drugima, a Allah je sam Sebi propisao da bude milostiv?&nbsp;<br>Sve što imaš od ovog
+            dunjaluka, a većinu toga nisi ni tražio ni zaslužio, dobio si jer te On voli. Ti si Njegovo stvorenje kojem
+            On voli da prašta, ma koliko grijeha imao. Zapamti, Njegova vrata milosti i oprosta su uvijek širom
+            otvorena.❤&nbsp;<br>💭Pitanja za razmišljanje:&nbsp;<br>1. Šta riječi "Er-Rahmān" i "Er-Rahīm" predstavljaju
+            u tvome životu?&nbsp;<br>2. U kojim i kakvim ih sve prilikama koristiš?&nbsp;<br>3. Koje te emocije
+            prožimaju kada izgovoriš ove dvije riječi?&nbsp;<br>4. Prema kome u životu trebaš biti više
+            milostiv?&nbsp;<br>5. Kako da iskažeš svoju milost prema majci u čijoj si milosti(maternici) bio/la 9
+            mjeseci?&nbsp;<br>6. Kako svoju milost možeš povećati prema ljudima?&nbsp;<br>7. Kako svoju milost možeš
+            povećati prema životinjama?&nbsp;<br>📌 Na kraju, podsjećam nas na dva divna kur'anska ajeta u kojima Allah
+            dž.š., kaže:&nbsp;<br>,,Onaj ko kakvo zlo učini ili se prema sebi ogriješi pa poslije zamoli Allaha da mu
+            oprosti – naći će da Allah prašta i da je milostiv." (En-Nisa, 110. ajet)&nbsp;<br>„A milost Moja obuhvaća
+            sve, daću je onima koji se budu grijeha klonili i zekat davali i onima koji u dokaze Naše budu vjerovali."
+            (Al-A'raf, 156 ajet)<br>
+            <br>Nadam se da ste izdvojili barem nekoliko minuta svoga vremena kako biste dublje razmislili o značenju
+            ova dva Allahova imena i šta ona predstavljaju u vašem životu.&nbsp;<br>
+            <br>Elhamdulillah, za sada smo memorisali tri Allahova imena, a ona su: Allah, Er-Rahmān i
+            Er-Rahīm.&nbsp;<br>
+            <br>U razgovoru s mnogim ljudima, primjetila sam koliko prošlost, konkretni događaji iz prošlosti, utiču na
+            njih, kako gube nadu i ne dopuštaju sebi da nastave dalje.&nbsp;<br>
+            <br>Istina je, insan treba voditi računa o sebi, preispitivati se svakodnevno.&nbsp;<br>U hadisima nalazimo
+            da je Poslanik, s.a.v s., tražio oprosta i do 70 puta dnevno.&nbsp;<br>
+            <br>Ako upućuješ dovu Allahu za oprost, vjerujući da je on doista Er-Rahmān i Er-Rahīm, On će ti oprostiti i
+            dati novu priliku za život, a ako ti je On usadio želju za pokajanjem, zar misliš da je to
+            slučajno?&nbsp;<br>
+            <br>Htjela sam skrenuti pažnju na još jednu stvar. Jedno od pitanja koje sam postavila prije svega sebi, a
+            onda i Vama, a ono je glasilo: ,,Ako je Allah propisao Sebi da bude milostiv, šta je s nama ljudima? Zašto
+            nemamo milosti jedni prema drugima?"&nbsp;<br>
+            <br>Zar biste voljeli vidjeti svoga brata/sestru kako pati na Sudnjem danu samo radi toga što Vi niste
+            smogli snage da halalite?&nbsp;<br>Zar nismo svjesni da imamo dovoljno grijeha za koje trebamo odgovarati,
+            pa zar da nemamo milosti jedni prema drugima i ne smognemo snage da halalimo kako bismo jedni drugima
+            olakšali barem malo ahiretske muke?&nbsp;<br>
+            <br>Uostalom, zar ne znate da to što ćete Vi oprostiti nekome ide Vama u korist?&nbsp;<br>
+            <br>,,Ko muslimanu oprosti njegovu pogrešku, Allah će mu na Kijametskom danu oprostiti njegovu.” (Ebu
+            Davud)&nbsp;<br>
+            <br>Želim s vama podijeliti divan tekst koji opisuje suštinu oprosta.&nbsp;<br>
+            <br>"Šta znači oprostiti nekome?&nbsp;<br>
+            <br>Oprostiti ne znači izgovoriti riječi "opraštam ti" ili prihvatiti nečije "izvini". To su samo riječi.
+            Samo forma koja se nije dotakla suštine.&nbsp;<br>
+            <br>Oprostiti znači nastaviti dalje.&nbsp;<br>Nastaviti sa svojim životom. Ne biti zarobljenik te osobe i
+            njenih postupaka.&nbsp;<br>To je pravo opraštanje."<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-7" id="ime4" data-image-width="870" data-image-height="1205">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">4. El-
+            Melik (المَلِكُ)&nbsp;<br>
+            <br>Zato što si ti El- Melik, ja se prepuštam Tvojoj vlasti i moja duša je ponizna pred Tobom.
+            💗&nbsp;<br>💬 Razmišljam. Kada bi samo insan istinski shvatio ovo uzvišeno Allahovo ime, u njegovoj duši ne
+            bi bilo straha ni od čega osim od Njega. Brige bi ga napustile, a duša bi mu bila slobodna i spokojna,
+            pokoravajući se volji Vladara svih vladara.&nbsp;<br>📌 Uzvišeno Allahovo ime El- Melik, El- Mālik, El-
+            Melīk- Vladar.&nbsp;<br>📌 Jezičko značenje Melik, Melīk i Malik: onaj koji posjeduje vlast.&nbsp;<br>📌
+            Poznavaoci dubljeg značenja kažu da El- Melik znači potpuni vladar svih vrsta posjeda, dok je El- Malik
+            vlasnik posebne vlasti. El- Melik je, dakle, sveobuhvatnije od El- Malik.&nbsp;<br>📌 Ibn Džerir,
+            rahimehullah, je rekao: “El- Melik (Vladar) jeste Onaj iznad kojeg, kao vladara, nema i ne postoji ništa.
+            Sve je to ispod Njega.”&nbsp;<br>📌 Istinska vlast pripada Allahu Jedinom i niko ne učestvuje s Njim u
+            vlasti. Svaki onaj koji nešto posjeduje, posjeduje to uz Allahovo posjedovanje i toga i njega
+            samog.&nbsp;<br>📌 Allahovo ime El- Melik se u Kur’anu spominje 5 puta. Neka je Uzvišen Allah, Vladar
+            istiniti!” (Taha, 114)&nbsp;<br>“On je Allah- nema drugog boga osim Njega- Vladar Istiniti.” (El- Hašr, 23)
+            Vladara ljudi.” (En- Nas, 2)&nbsp;<br>📌 Allahovo ime El- Malik se spominje 2 puta u Kur’anu. "Vladara Dana
+            sudnjeg.” (El- Fatiha, 3) “Reci: “O Allahu, Ti koji svu vlast imaš...” (Ali Imran, 26)&nbsp;<br>📌 Allahovo
+            ime El- Melīk se spominje samo jednom u Kur’anu, u 55. ajetu sure El- Qamer.&nbsp;<br>📌 Čovjek je posjednik
+            (malik) nečega, ali Istinski Vlasnik (El- Malik) je samo Allah Uzvišeni.&nbsp;<br>📌 Učenjaci kažu da 26.
+            ajet sure Ali Imran obuhvata sva Allahova lijepa imena i savršena značenja. Poslanik s.a.v.s. nikada nije
+            proučio taj ajet a da nije zaplakao. Neki učenjaci smatraju da je Allahovo najveće ime “Malikul- mulk”
+            (sadržano u spomenutom ajetu).&nbsp;<br>📌 Allah Uzvišeni ima apsolutnu vlast (El- Melik) i On njome
+            savršeno vlada (El- Malik).&nbsp;<br>📌 Zabranjeno je da čovjek nosi ime “Malikul- mulk” ili da sebe naziva
+            apsolutnim vladarom.&nbsp;<br>📌 Apsolutna vlast i pokornost pripadaju samo Allahu, Istinskom Vladaru. Svi
+            ostali vladari su u Njegovoj vlasti, Njegovi robovi.&nbsp;<br>💬 Divno li je znati da je naš Jedini i
+            Istinski Vladar samo Allah. Divno li je znati da On upravlja sa svim, i da nam niko ne može pribaviti neku
+            korist ili nanijeti štetu bez Njegove dozvole. Divno li je znati da su naš život i naša smrt, naše zdravlje,
+            naša porodica, naš imetak, naše znanje i sve ostalo što imamo, a i mi sami u Njegovoj vlasti. Koliko nas ta
+            spoznaja rasterećuje od dunjalučkih briga, i oslobađa od straha i strepnje pred robovima
+            Njegovim.&nbsp;<br>"Reci: "O Allahu, koji svu vlast imaš, Ti vlast onome kome hoćeš daješ, a oduzimaš je od
+            onoga od koga hoćeš; Ti onoga koga hoćeš uzvisuješ, a onoga koga hoćeš unizuješ; u Tvojoj ruci je svako
+            dobro - Ti, uistinu, sve možeš!" (Ali Imran,26.)&nbsp;<br>Sve, apsolutno sve što se dešava i što nas
+            okružuje je u vlasti Vladara. Vjerovanje u ovo uzvišeno Allahovo ime čini da se čovjekovo srce smiruje pred
+            svim vrstama iskušenja. Također, spoznaja da je Allah Jedini Istinski Vladar, ne dozvoljava čovjeku da se
+            ponese ili nepravedno postupa ma koliku ovozemaljsku vlast imao. Ona (ova spoznaja) budi svijest u čovjeku
+            da on nije apsolutni vladar niti vlasnik bilo čega i da će za svoju odgovornost i svoja djela odgovarati
+            pred apsolutnim Vladarem.&nbsp;<br>Svako onaj ko se nepravedno ponese onim što mu je dato, prije ili kasnije
+            će spoznati da zapravo nema nikakvu moć niti vlast. Takav slučaj je bio sa Faraonom, pa je na koncu shvatio
+            da je jedini gospodar i vladar samo Allah.&nbsp;<br>💭 Pitanja za razmišljanje:&nbsp;<br>1. Šta u tvome
+            životu predstavljaju riječi “El- Malik” i “El- Melik”?&nbsp;<br>2. Razmišljaš li dok učiš suru El- Fatihu na
+            svakom rekatu svojih namaza o ovom uzvišenom Allahovom imenu?&nbsp;<br>3. Da li si ikada pomislio/ la da si
+            ti vlasnik/ vlasnica nečega?&nbsp;<br>4. Koliko često spominješ ovo uzvišeno Allahovo ime?&nbsp;<br>5. Da li
+            se bojiš Allahovih stvorenja zbog vlasti koja im je data više nego Vladara svega?&nbsp;<br>6. Da li se
+            pokoravaš Allahovim stvorenjima u onome što je nepokornost prema Allahu?&nbsp;<br>7. Da li si milostiv/ a i
+            pravedan/ na prema onima koji su u tvojoj privremenoj “vlasti”?&nbsp;<br>8. Da li vjeruješ da je sve u
+            apsolutoj vlasti Vladara svih vladara?&nbsp;<br>9. Da li imaš svijest od odgovornosti pred Vladarem za
+            funkciju/ poziciju koja ti je povjerena na ovom svijetu?&nbsp;<br>10. Da li si “vlasnik” svojih strasti i
+            svoga nefsa ili oni vladaju tobom?&nbsp;<br>
+            <br>📌 Za kraj jedan divan ajet koji nas podsjeća na neizmjernu Allahovu milost, iako je On apsolutni
+            vladar: <br>
+            <br>“Toga Dana će istinska vlast biti samo u Milostivoga.” (El- Furkan, 26) <br>
+            <br>Ujedno, ovaj ajet nas također podsjeća da ličnost ovozemaljskog vladara nije potpuna bez dobročinstva,
+            milosti i samilosti. Veličina je imati vlast i moć a pokazati samilost i opr<br>Nadam se da ste proveli u
+            razmišljanju o uzvišenom Allahovom imenu El- Melik i da ste pokušali barem malo podići svijest o
+            apsolutnosti Njegove vlasti.&nbsp;<br>
+            <br>Vjerujem da ste postali opušteniji i da ste razmišljali o tome kako je sve ono što imate zapravo
+            Njegovo. Taj osjećaj spušta čovjekov ego i uči ga istinskoj poniznosti pred Njim i zahvalnosti
+            Njemu.&nbsp;<br>
+            <br>Isto tako, sa spoznajom Njegovog uzvišenog imena El- Melik, duša postaje rahatnija a misli opuštenije.
+            Sve naše brige, problemi i tjeskobe imaju Najboljeg Vladara.&nbsp;<br>A zar ima straha i brige za onoga koji
+            se prepustio Njegovoj vladavini?&nbsp;<br>
+            <br>🔴Podsjetnik:&nbsp;<br>Ako niste do sada, pokušajte zapamtiti 26. i 27. ajet sure Ali Imran. Ajeti koji
+            odagnaju brigu, donose smiraj i pozivaju našu dušu da se prepusti vlasti Njegovoj.&nbsp;<br>
+            <br>🔴Također, želim spomenuti i zikr koji bi trebao biti naša svakodnevnica a u kojem se spominje riječ
+            mulk. Rekao je Allahov Poslanik , sallallahu alejhi ve sellem: “Tko kaže:&nbsp;<br>لا إِلَهَ إِلاّ اللَّهُ
+            وَحْدَهُ لا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِير&nbsp;<br>“LA ILAHE
+            ILLALLAHU VAHDEHU LA ŠERIKE LEHU, LEHUL-MULKU VE LEHUL HAMDU VE HUVE ALA KULLI ŠEJ’IN KADIR”&nbsp;<br>(Nema
+            boga sem Allaha, On nema sudruga, Njemu pripada sva vlast, Njemu pripada sva hvala i On je svemoćan),
+            svakoga dana po sto puta, vrijedi mu kao da je oslobodio deset robova, biće mu upisano sto dobrih djela,
+            izbrisano sto grijeha, i biće mu to štit od šejtana toga dana sve do noći i niko nije ništa bolje uradio,
+            osim čovjeka koji je to uradio više od njega.”&nbsp;<br>
+            <br>
+            <br>Sutra inšaAllah se upoznajemo sa još jednim Njegovim imenom: El- Quddus. 🌹<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-8" id="ime5" data-image-width="870" data-image-height="1205">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">5.
+            El-Quddūs (القُدُّوسُ) - Najčistiji, Sveti, Blagoslovljeni&nbsp;<br>
+            <br>💬 Kada te brige dunjaluka pritisnu i pomisliš da izlaza nema, ti imaš svog Gospodara da Mu dušu
+            otvoriš.&nbsp;<br>Samo podigneš ruke i izustiš ono što ti dušu tišti.&nbsp;<br>Znaj, On se uvijek Svojim
+            robovima odaziva.&nbsp;<br>Ako ne dobiješ ono što želiš, dobit ćeš ljepše. Jer takav je Gospodar naš -
+            daruje i više od onoga što Mu tražimo.&nbsp;<br>
+            <br>◻️Allahovo ime El-Quddūs ima dva značenja u arapskom jeziku:&nbsp;<br>
+            <br>1. Izvedeno je od riječi القُدْسُ (quds) što znači: ٌطَهَارَة (tahāret) – čistoća.&nbsp;<br>
+            <br>2. Riječ "quddūs" znači bereket.&nbsp;<br>
+            <br>◽Allahovo uzvišeno ime El-Quddūs se spominje u Kur'anu na dva mjesta.&nbsp;<br>
+            <br>▫️Ibn Kajjim, rahimehullah, objašnjavajući ovo Allahovo ime je rekao: „El-Quddūs: Koji je čist od svake
+            vrste zla, manjkavosti i mahane."&nbsp;<br>
+            <br>▫️U komentaru ovog imena, mufessiri kažu da je On čist od bilo koje vrste nedostataka i uzvišen od
+            stvari koje Mu ne dolikuju.&nbsp;<br>
+            <br>💫Ponekad bi Poslanik, alejhisselam, spominjao ovo Allahovo ime u dovi na ruku'u i sedždi
+            riječima:&nbsp;<br>
+            <br>سُبُّوحٌ قُدُّوسٌ رَبُّ الْمَلَائِكَةِ وَالرُّوحِ&nbsp;<br>
+            <br>(Slavljeni i Časni Gospodar melekā i Džibrila).&nbsp;<br>
+            <br>▫️Jedan od plodova vjerovanja u Allahovo uzvišeno ime El-Quddūs jeste spoznaja Allaha kao Svetog i
+            Čistog (Uzvišen od nedostataka i potpuno savršenog), a savršena svojstva i osobine su one kojima je Allah,
+            tebareke ve te'ala, Sebe opisao u Svojoj Knjizi, ili Ga je opisao Poslanik, sallallahu alejhi ve
+            sellem.&nbsp;<br>
+            <br>لَيْسَ كَمِثْلِهِ شَيْءٌ ۖ وَهُوَ السَّمِيعُ الْبَصِيرُ&nbsp;<br>„Niko nije kao On! On sve čuje i sve
+            vidi.“ (Sura Eš-Šūrā, 11)&nbsp;<br>
+            <br>✨Savršenstvo Uzvišenog Allaha ogleda se u tome da nema sudruga.&nbsp;<br>&nbsp;اللَّهُ لَا إِلَٰهَ
+            إِلَّا هُوَ الْحَيُّ الْقَيُّومُ&nbsp;<br>„Allah je – nema istinskog boga osim Njega – Živi i Vječni!“
+            (El-Bekare, 255).&nbsp;<br>
+            <br>Uzvišeni Allah je čist od toga da ima drúgu ili dijete. Uzvišen je i Čist od svojstva nepravde. Čist je
+            od svojstva zaborava i od osobine laži. Njegov Govor je istinit i obećanja Njegova su istinita.&nbsp;<br>
+            <br>💬 A što se tiče nas - mi smo potrebni Allaha. Zamisli kakav bi tvoj život bio da nemaš blagodat vida pa
+            da si uskraćen uživanja u dunjalučkim ljepotama...&nbsp;<br>Zamisli koliku ti je blagodat Gospodar podario
+            kada ti je dao sposobnost govora, kretanja...&nbsp;<br>Kada kreneš brojati svoje blagodati, doista im se
+            kraj ne nazire.&nbsp;<br>
+            <br>Insanu, potreban si Allaha. Njemu ideš. Njemu se vraćaš. Dunjaluk je kratak.&nbsp;<br>
+            <br>A tvoj te Gospodar čisti da Mu se čist od grijeha vratiš. Stoga mu pohrli.&nbsp;<br>
+            <br>💭 Razmisli:&nbsp;<br>1. Šta u tvome životu predstavlja Allahovo ime El-Quddūs?&nbsp;<br>2. Koliko često
+            se u danu dovom obratiš Uzvišenom Allahu?&nbsp;<br>3. Kakav bi tvoj život bio bez blagodati koje su ti
+            darovane?&nbsp;<br>4. Uzvišeni Allah ne gleda u naša tijela, nego u naša srca. Koliko često svoje srce
+            čistim od osobina s kojima Allah nije zadovoljan?&nbsp;<br>5. Razmišljaš li o tome da tvoj Gospodar ne
+            zaboravlja ništa i da Mu je sve poznato?&nbsp;<br>6. Koliko često na ruku'u i sedždi učiš dovu u kojoj je
+            Poslanik, alejhisselam, spominjao ovo Allahovo ime?&nbsp;<br>7. Da li si ikad razmišljao/la da te
+            iskušenjima Allah čisti za susret sa Sobom?<br>
+            <br>
+            <br>Velika je blagodat biti od onih koji se sjećaju Uzvišenog Allaha i koji su svjesni da ih On u svakom
+            trenutku posmatra. <br>
+            <br>Cilj ovih podsjetnika i jeste takav - da se trudimo biti od onih koji se stalno sjećaju svog Gospodara,
+            razmišljaju o Njemu i osjete plodove tog razmišljanja na svakom polju svog života. <br>
+            <br>Kako bismo olakšale da razmišljanje o Allahovim imenima bude dio naše svakodnevnice, ostavit ćemo
+            vremena da razmišljamo duže o već napisanim Allahovim imenima tako što ćemo u mjesecu februaru navoditi
+            Allahova imena dva puta sedmično. <br>
+            <br>✨ Naš Gospodar voli mala, ali ustrajna djela. <br>Kako li će se, tek, pozitivno odraziti na naš život
+            kada budemo promišljali ustrajno, pa makar i naizgled malo. <br>
+            <br>Sve što je Allahu od naših djela drago, pa makar i malo bilo, ali ustrajno, naša duša vremenom zavoli.
+            <br>
+            <br>Nama cilj i jeste to. ✨<br>
+            <br>Ako se nekada osjetiš sam, napušten, razočaran i tužan, sjeti se da imaš svog Gospodara, Koji je
+            El-Quddūs (Čist od nedostataka).&nbsp;<br>
+            <br>Prisjeti se da je tvoj Gospodar savršen i da se Njegovo savršenstvo ogleda u tome da nema sudruga. Jedan
+            Jedini.&nbsp;<br>
+            <br>Čist i uzvišen od svojstva manjkavosti, smrti i spavanja.&nbsp;<br>Uzvišen je i čist od svojstva
+            nepravde i zaborava.&nbsp;<br>Uzvišeni Allah je čist od osobine laži. Njegov Govor je istinit, a obećanje
+            istina.&nbsp;<br>وَمَنْ أَصْدَقُ مِنَ اللَّهِ حَدِيثًا&nbsp;<br>„A čije su riječi od Allahovih riječi
+            istinitije?“ (En-Nisa, 87.)&nbsp;<br>
+            <br>▫️Allah je uzvišen od svojstva siromaštva i škrtosti.&nbsp;<br>
+            <br>Imaš Gospodara Koji može sve i Kojem je sve lahko.&nbsp;<br>Lahko mu je odazvati se i na tvoje dove i
+            promijeniti tvoj život, tvoje stanje i tvoje okolnosti.&nbsp;<br>
+            <br>✨Kada otvoriš Kur'an, na početku sure Merjem pronaći ćeš u četvrtom ajetu riječi koje su smiraj za
+            dušu:&nbsp;<br>
+            <br>وَلَمْ أَكُنْ بِدُعَائِكَ رَبِّ شَقِيًّا&nbsp;<br>
+            <br>"...a nikada nisam, kad sam Ti, Gospodaru moj, molbu uputio, nesretan ostao.'"
+            ✨&nbsp;<br>____________________________&nbsp;<br>Nakon razmišljanja o Allahovom imenu El-Quddūs, želim
+            jednim hadisom podsjetiti i sebe i vas na riječi kojima možemo veličati Uzvišenog Allaha nakon
+            vitr-namaza:&nbsp;<br>
+            <br>💌Ubejj b. Ka'b, radijallahu anhu, prenosi da je Poslanik, sallallahu alejhi ve sellem, poslije
+            klanjanja vitr-namaza spominjao Allaha, tebareke ve te'ala, ovim istim imenom. On bi poslije selama na
+            vitr-namazu izgovorio ovu dovu tri puta, s tim što bi je treći put izgovorio naglas i
+            polahko:&nbsp;<br>سُبْحَانَ المَلِكِ القُدُّوسِ&nbsp;<br>(Subhanel-Melikil-Quddūsi: Slavljen neka si,
+            Vladaru, Koji si čist od nedostataka).&nbsp;<br>___&nbsp;<br>(Ebu Davud, En-Nesai. Hadis je
+            vjerodostojan).<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-9" id="ime6" data-image-width="870" data-image-height="1205">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">6. Es-Selam
+            ( ٱلسَّلَامُ) - Izvor smirenosti i spasa, Koji je daleko od svake mahane. <br>
+            <br>🗨 Kako da Mu ne robujem? <br>Ja, sićušni rob, samo mala praška na ovom dunjaluku. Šta sam ja naspram
+            Njegove veličine, šta je moje postojanje naspram Onog Koji je i mene i sve oko mene stvorio? <br>Kako da Mu
+            ne budem zahvalan i ponizan, kad jedino On je savršen i od svih mahana sačuvan?! Kako da se svaki put u
+            brizi i strahu ne sjetim Onog kod Kojeg je spas i kod Kojeg je smirenost?! <br>
+            <br>◾U arapskom jeziku, riječi 'selam' i 'selamet' imaju značenje: nevinosti, obznane, čistoće, sigurnosti,
+            ispravnosti. <br>
+            <br>◾Allahovo ime Es-Selam, kako kažu učenjaci i muffesiri, ima nekoliko značenja: <br>•Onaj Koji je čist od
+            svih nedostataka i mahana <br>•Onaj Koji će nazvati selam robovima [Jasin, 58.] <br>•Onaj Koji ne čini
+            nepravdu stvorenjima <br>•Onaj Koji čuva svoje robove i čini ih sigurnim. <br>Ibnul-Arebi El-Meliki kaže da
+            ime Es-Selam ima značenje "spas i oprost". <br>
+            <br>💫Za Džennet se u Kur'anu kaže da je Darus-selam (Kuća mira i spasa); El-En'am, 127., Junus 25. <br>
+            <br>💫Er-Razi, rahimehullah, je rekao da je i dobar i koristan govor nazvan selamom. <br>
+            <br>💫Od Allahovog imena Es-Selam izvedeno je i ime el-islam, ime naše plemenite i kod Allaha jedine
+            ispravne vjere. <br>
+            <br>◾Allahovo ime Es-Selam se u Kur'anu spominje samo na jednom mjestu: <br>
+            <br>&nbsp;هُوَ ٱللَّهُ ٱلَّذِي لَآ إِلَٰهَ إِلَّا هُوَ ٱلۡمَلِكُ ٱلۡقُدُّوسُ ٱلسَّلَٰمُ ... <br>
+            <br>[El-Hašr, 23.] <br>
+            <br>◾Mnogo je plodova vjerovanja u ovo Allahovo ime, a u jednom hadisu Muhammed, alejhisselam, kaže: "Dok
+            džennetlije budu uživale u blagodatima vidjet će iznad sebe Uzvišenog Gospodara, koji će ih pozdraviti
+            riječima: 'Esselamu alejkum, stanovnici dženneta'. To su, zapravo, riječi Uzvišenog u Kur'anu: 'Mir vama!',
+            a njihova posljednja molitva: 'Tebe, Allaha, Gospodara svjetova hvalimo'. <br>
+            <br>◾Čuvari dženneta će, također, nazivati selam džennetlijama. <br>&nbsp;[ Ez-zumer, 73.] <br>
+            <br>◾Širenje imena Es-Selam je razlog ulaska u Džennet. <br>
+            <br>💫Ibn Abbas, radijallahu anhu, kaže: "Es-Selam je ime od Allahovih lijepih imena koje je On spustio na
+            Zemlju. Stoga ga širite međusobno. Vrijednost selama je da vodi do Kuće selama." <br>
+            <br>💫Od Ebu Hurejre se prenosi da je Poslanik, alejhisselam, rekao: "Nećete ući u Džennet sve dok ne budete
+            vjerovali, a nećete vjerovati sve dok se ne budete voljeli. Uputit ću vas na jednu stvar - ako je budete
+            radili voljet ćete se - širite selam muđusobno." (Muslim) <br>
+            <br>🗨Da li ti je sada jasnije zašto je On jedini Kojeg trebaš obožavati i Kojem se trebaš pokoravati? Ne
+            trebaš, nego moraš! Zar nisi svjestan blagodati da o tebi brigu vodi i čuva te Es-Selam, da tvoje grijehe
+            prašta i smirenost u tvoje srce spušta, Onaj koji je od svih nedostataka i mahana sačuvan i Onaj koji ničije
+            pomoći nije potreban?! <br>
+            <br>🗨Sada imaš priliku da razmisliš i svoje stanje popraviš! <br>1. Da li si znao/la za Allahovo ime
+            Es-Selam? <br>2. Ako je odgovor na prvo pitanje potvrdan, šta Allahovo ime Es-Selam predstavlja u tvome
+            životu? <br>3. Koliko često, dok nazivaš selam, razmišljaš o značenju tih riječi? <br>4. Da li shvataš
+            važnost nazivanja selama drugima? <br>5. Da li si svjestan činjenice da svojim djelima (nazivanjem
+            selama)&nbsp; možeš zaslužiti ulazak u Darus-selam (Džennet)? <br>6. Da li savjetuješ druge da nazivaju
+            selam? <br>7. Da li si strpljiv u iskušenjima i zahvalan na blagodatima? <br>8. Koliko često u Njegovim
+            riječima pronalaziš smiraj za svoje srce?<br>
+            <br>Esselamu alejkum!&nbsp;<br>
+            <br>📌Nadam se da ste razmišljali i o ovom Allahovom imenu, izvukli pouke iz stvari koje su navedene u
+            prošloj poruci i preispitali svoje stanje.&nbsp;<br>
+            <br>Moje pitanje sada bi bilo: "Da li si ovih dana češće nazivao/la selam nego što to radiš inače i da li si
+            se sjetio/la da ti to može biti jedan od razloga ulaska u Džennet?"&nbsp;<br>💫Imaj na umu i ovo: "Zaista se
+            djela vrednuju prema namjeri i svakom čovjeku pripada ono što je naumio..." (Hadis)&nbsp;<br>
+            <br>Podsjetit ćemo se na još jednu stvar:&nbsp;<br>• Razi prenosi govor u Tefsiru: "El Kuddus ukazuje da je
+            (Allah) čist od svih mahana u prošlosti i sadašnjosti, a Es-Selam ukazuje na to da je lišen toga i u
+            budućnosti".&nbsp;<br>
+            <br>🚫Ne može se reći "Es-Selamu 'ala Allah!"🚫&nbsp;<br>Zabrana ovih riječi navodi se u hadisu koji prenosi
+            Abdullah ibn Mes'ud: "Klanjali smo iza Poslanika, alejhisselam, pa smo rekli: 'Es-Selamu 'ala Allah', pa
+            Poslanik reče: 'Zaista je Allah-Es-Selam. Ipak, recite: Et-tehijjatu lillahi ves-salavatu vet-tajjibatu..."
+            (Muttefekun alejhi)&nbsp;<br>
+            <br>Dakle, Allah je Es-Selam, od Njega dolazi mir(selam).&nbsp;<br>
+            <br>Također, ovo ime nije dozvoljeno nadijevati stvorenjima: "Moj Allahu! Ti si Selam i od Tebe dolazi
+            Selam. Blagodaran si Ti, Posjedovatelju veličine i plemenitosti." (Hadis)&nbsp;<br>💫Dozvoljeno je
+            nadijevati imena poput Sulejman ili Selman. 💫&nbsp;<br>
+            <br>Imajmo na umu da je Gospodar u Kur'anu rekao: "Samo će onaj koji Allahu srca čista dođe spašen biti."
+            (Eš-Šu'ara, 79).&nbsp;<br>
+            <br>📌Sačuvaj svoje srce od griješenja, nazivaj selam drugima, pa se nadaj selamu meleka dok ti dušu budu
+            uzimali i selamu Gospodara kad ljudi u džennetskim baščama budu uživali!&nbsp;<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-10" id="ime7" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">7.
+            El-Mu'min (المُؤْمِن) - Onaj Koji potvrđuje obećanje i daje sigurnost, dželle dželaluhu&nbsp;<br>
+            <br>🍃 Zbog čega da moje srce strahuje kada On, subhaneh, na mene spušta smirenost i
+            sigurnost?&nbsp;<br>Zbog čega da me zavara lažni sjaj ovog svijeta i lažna obećanja šejtana prokletog, a
+            Allahovo obećanje je istina, Njegovo postojanje je istina, smrt je istina, Sudnji dan je istina?&nbsp;<br>I
+            kako da Ti se ne pokorim kada su Džennet i Džehennem istina, i da ćemo pred Tobom sakupljeni biti, i da će
+            oni koji vjerovali budu u Tvojoj zaštiti i sigirnosti biti.&nbsp;<br>
+            <br>U arapskome jeziku glagol 'emene' (ِ-أَمَنَ), od koje je izvedena riječ El-Mu'min, ima
+            značenje:&nbsp;<br>pouzdavati se u, oslanjati se na&nbsp;<br>
+            <br>📌Jezičko značenje Allahovog lijepog imena El-Mu'min&nbsp;<br>
+            <br>Allahovo lijepo ime El-Mu'min ima više značenja:&nbsp;<br>📌 et-tasdik (التَّصْديِق) - potvrđivanje,
+            vjerovanje&nbsp;<br>📌 el-eman (الأَمَان) - sigurnost koja je suprotna strahu&nbsp;<br>
+            <br>"... koji ih gladne hrani i od straha brani." (El-Kurejš, 4.)&nbsp;<br>
+            <br>__________________&nbsp;<br>
+            <br>Allahovo, subhanehu ve te'ala, ime El-Mu'min spominje se samo jednom u Kur'anu, u 23. ajetu sure
+            El-Hašr.&nbsp;<br>___________________&nbsp;<br>
+            <br>
+            <br>Kada se odnosi na Uzvišenog Allaha, El-Mu'min ima sljedeće značenje:&nbsp;<br>
+            <br>✨ Od Ibn Abbasa, r.a., se prenosi da El-Mu'min znači: "Onaj od koga su stvorenja sigurna da im neće
+            učiniti nepravdu"&nbsp;<br>✨Mudžahid, rhm., rekao je da je El-Mu'min, Onaj koji je ukazao da je On jedan u
+            riječima:&nbsp;<br>
+            <br>"Allah svjedoči da nema drugog istinskog boga osim Njega." (Ali Imran, 18.)&nbsp;<br>
+            <br>Također se kaže: "El-Mu'min, tj. Onaj koji potvrđuje istinitost onoga što je obećao vjernicima (nagradu)
+            i nevjernicima (kaznu)."&nbsp;&nbsp;<br>________________&nbsp;<br>
+            <br>✨Od plodova vjerovanja u Allahovo lijepo ime, El-Mu'min, jeste da je Allah Onaj koji potvrđuje Svoju
+            jednoću.&nbsp;<br>
+            <br>"Mi ćemo im pružati dokaze Naše u prostranstvima svemirskim, a i u njima samima dok im ne bude sasvim
+            jasno da je Kur'an istina." (Fussilet, 53.)&nbsp;<br>
+            <br>✨Kada rob spozna da je Allah Onaj koji daje sigurnost Svojim robovima, takav će istinski biti ubijeđen
+            da je El-Mu'min Onaj koji pruža utočište onome koga je strah obuzeo - jer nema prave sigurnosti, ni zaštite,
+            osim kod kod Gospodara uzvišenog.&nbsp;<br>
+            <br>✨Svaki vjernik je obavezan pružiti drugim ljudima sigurnost od svog zla i spletki.&nbsp;<br>
+            <br>Od Ebu Hurejre, r.a., se prenosi da je Poslanik, sallallahu alejhi ve sellem, rekao: "Nije vjernik onaj
+            od čijeg zla nije siguran njegov komšija" (Mislim)&nbsp;<br>_______________&nbsp;<br>
+            <br>🍃Ponekada tuga obavije tvoje srce kada pogledaš teško stanje ummeta i zaslijepi te lažni uspjeh onih
+            koji su daleko od Njega. Ali, ne boj se i ne tuguj! Ta, znaj da pobjeda na dunjaluku pripada vjernicima, a
+            isto tako i nagrada na ahiretu, jer to je obećanje od Svevišnjeg!&nbsp;<br>I nije li ti sada jasno zbog čega
+            pred Njegovom uzvišenošću ponizan i skrušen trebaš biti, znajući da je On El-Mu'min i da je pod Njegovim
+            okriljem sigurnost i zaštita.&nbsp;<br>
+            <br>A sada se, kada si srcem obuhvatio Allahovo ime El-Mu'min, zapitaj:&nbsp;<br>1. Kakve emocije ovo
+            Allahovo lijepo ime prouzrokuje kod tebe?&nbsp;<br>2. Da li su od moga jezika i ruku sigurni drugi
+            ljudi?&nbsp;<br>3. Da li ja ispunjavam svoja obećanja i ono na šta sam se obavezao/la prema drugima
+            (emanet)?&nbsp;<br>4. Da li osjećam potpunu smirenost i sigurnost na sedždi, dok ničice padam pred
+            Njim?&nbsp;<br>5. Kada me obuzme strah, kod koga prvo tražim utočište (iskreno sebe analiziraj)?&nbsp;<br>6.
+            Da li svojim djelima iskreno veličam Gospodara svjetova znajući da je On jedini istinski Bog i da su Njegove
+            riječi istina?&nbsp;<br>7. Koliko hrlim dobrim djelima i bježim od ostavljanja grijeha znajući da su Džennet
+            i Džehnnem istina?&nbsp;<br>8. Da li moje srce pronalazi smiraj dok učim govor plemenitog Gospodara, znajući
+            da uzvišeni Allah kaže: "A čije su riječi od Allahovih istinitije" (En-Nisa, 122.)&nbsp;<br>9. Koliko često
+            razmišljam o ljepotama Dženneta i strahotama Džehennema?<br>
+            <br>Esselamu alejkum ve rahmetullahi ve berekatuhu!&nbsp;<br>
+            <br>Nadamo se da ste u protekla dva dana razmišljali o Allahovom lijepom imenu, El-Mu'min i da vam je
+            saznanje i razumijevanje toga imena povećalo ljubav prema Rabbu jedinome, ulilo smirenost i odagnalo svaki
+            vid dunjalučkog straha, znajući da je sa El-Mu'minom sigurnost. ✨&nbsp;<br>
+            <br>Htjela bih vas još jednom potsjetiti na značenje istoga:&nbsp;<br>🍃 Onaj koji potvrđuje obećanje i daje
+            sigurnost.&nbsp;<br>
+            <br>Mnogo je plodova vjerovanja u Allahovo ime El-Mu'min.&nbsp;<br>No, sada bih izdvojila ono koje se vezuje
+            za naša obećanja i emanete.&nbsp;<br>Podijeliti ću sa vama jedan ajet i hadis, u nadi da će doprijeti do
+            vaših srca:&nbsp;<br>
+            <br>“…i oni koji povjerene im emanete budu čuvali i obećanja svoja ispunjavali... oni će u džennetskim
+            baščama biti počašćeni.”&nbsp;(El-Mearidž, 32 i 35)&nbsp;<br>__________&nbsp;<br>
+            <br>Rekao je Poslanik, sallallahu alejhi ve sellem:&nbsp;“Zaista će Allah na Sudnjemu danu onome ko bude
+            varao ljude svojim obećanjima dati zastavu na kojoj će pisati: ‘Prevario (iznevjerio) toga i
+            toga’.”&nbsp;(Buhari i Muslim)&nbsp;<br>___________&nbsp;<br>
+            <br>Ako želimo da Gospodar svoje obećanje prema nama ispuni (u pogledu Njegove nagrade), ta budimo i mi od
+            onih koji ispunjavaju data svoja obećanja i emanete. Jer, doista, čuvanje emaneta i ispunjavanje obećanja
+            ukazuju na potpunost imana.&nbsp;<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-11" id="ime8" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">8.
+            El-Muhejmin (ُالمُهَيْمِن)&nbsp;<br>
+            <br>Svjedok nad stvorenjima i onim što oni rade. On sve može, ništa Mu nije nepoznato, i Njemu ništa nije
+            nemoguće.&nbsp;<br>
+            <br>Zar nije ljepota znati da je Allahovo svojstvo da je On svjedok nad stvorenjima, a ti si to
+            stvorenje?&nbsp;<br>Kada se nađeš u beznađu, znaj da uvijek imaš koga pozvati za svjedoka, a nije li On
+            najbolji svjedok?!&nbsp;<br>
+            <br>Jezičko značenje:&nbsp;<br>El-Muhejmin je ime koje dolazi od riječi 'hejmenetun' čiji je glagol
+            hejmene-juhejminu. Imenica 'hejmenetun' ima značenje: prevlasti nad nečim, čuvanja istog, mogućnosti da s
+            njim postupa kako hoće.&nbsp;<br>
+            <br>El-Muhejmin ima značenje šahida, svjedoka koji svjedoči riječima koje se izgovore i djelima koja se
+            urade, kako kažu Mudžahid, Katada i drugi s vjerodostojnim lancem prenosilaca od njih.&nbsp;<br>
+            <br>
+            <br>Zanimljivo je da se ovo Allahovo ime spominje jedanput u Kur'anu u ovom kontekstu i to u suri El-Hašr (
+            Progonstvo) :&nbsp;<br>"....Onaj koji nad svim bdi..."&nbsp;<br>
+            <br>Ova riječ je upotrijebljena u još jednom kontekstu, a to je u suri El-Maide:&nbsp;<br>"...da potvrdi
+            knjige prije nje objavljene i da nad njima bdi.."&nbsp;<br>U ovom ajetu se govori o Kur'anu, Knjizi koja
+            bdije nad ostalim, a nije li upravo Allah, koji je El-Muhejmin, Onaj koji bdije nad Kur'anom ( Mi smo Kur'an
+            objavili i Mi ćemo nad njim bdjeti)?&nbsp;<br>-"Pa, koju blagodat Gospodara svoga poričete"&nbsp;<br>
+            <br>Sada, kada znaš ovo Allahovo Uzvišeno ime, zapitaj se:&nbsp;<br>-Nad čime bdiješ?&nbsp;<br>-Da li je to
+            vrijedno tvog vremena koje ti je dato i koje se neće vratiti?&nbsp;<br>-Zar nije najviše vrijedno bdjeti nad
+            Allahovim govorom koji je:&nbsp;<br>Uputa i smiraj vjernicima&nbsp;<br>Najljepši govor&nbsp;<br>Nadnaravnost
+            koju nijedan čovjek ne može dostići?&nbsp;<br>-Zapitaj se, šta je to proljeće srca tvog, sada kada nam
+            proljeće dolazi?&nbsp;<br>
+            <br>Molim Allaha dž.š da budemo od onih koji bdiju nad dobrom!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-12" id="ime9" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">9.
+            El-'Aziz(العَزِيزُ) - Silni&nbsp;<br>
+            <br>💬Onaj koji je svemu snagu dao. Zatim je (sva stvorenja) Sebi potčinio i nad njima zavladao...(Ibn
+            Kesir)&nbsp;<br>✒️Ovo se ime izvodi iz riječi "el-'izzu" i "el-'izzetu" koje znače: snaga, trijumf, ponos,
+            dostojanstvo, pobijediti, nadvladati.&nbsp;<br>Njime je opisan Poslanik, as, u predzadnjem ajetu sure
+            Et-Tevbe. Allah je i sam Kur'an nazvao ovim imenom."A on je, zaista, knjiga zaštićena..."(Fussilet,
+            41)&nbsp;<br>
+            <br>📖U Ku'ranu se spominje čak 92 puta, što nam kazuje da je veoma značajno i da se posebno trebamo
+            potruditi da ga razumijemo.&nbsp;<br>
+            <br>💭Mi insani smo čudni. Svoju snagu crpimo na razne strane, kao da je imamo beskonačno mnogo. Bezuslovno
+            se dajemo, gdje treba i gdje ne treba, misleći da će nam biti uzvraćeno. Da će nam zahvaliti, da ćemo
+            uspjeti, da ćemo pobijediti. A šta je uspjeh? Tuđa pohvala, tuđe "hvala"? Dunjaluk? Očisti svoj nijet da ti
+            trud ne bude uzalud, a zatim razmisli:&nbsp;<br>
+            <br>1. Na šta trošiš svoju energiju(budi iskren/a!)? Počni od najbanalnijih stvari(npr. predugo korišćenje
+            društvenih mreža) da bi došao/la do onih opasnijih(npr. prevelik trud u održavanju odnosa sa osobama koje ti
+            ne odgovaraju).&nbsp;<br>2. Nabroj 10 stvari na koje si ponosan/na u svom životu i napiši zbog čega si na
+            njih ponosan/na. Neka ti je uvijek na umu da taj uspjeh nije od tebe, već od El-'Aziza.&nbsp;<br>3. Da li se
+            ikada nađeš u nedoumici kada trebaš uraditi neki ibadet (npr. klanjati na fakultetu) zbog straha šta će
+            drugi ljudi reći?&nbsp;<br>4. Da li si ponosan/na što si musliman/ka? Da li od tog ponosa dobijaš snagu i
+            elan da što više dobra činiš?&nbsp;<br>5. Kaže se u hadisu "Allah će povećavati svome robu snagu sve dok on
+            bude opraštao drugima." Da li teško opraštaš drugima? Da li teško opraštaš sebi?&nbsp;<br>
+            <br>💖Iskreno odgovori na postavljena pitanja. Daj sebi vremena da razmisliš. Ne žuri. Potrudi se da olakšaš
+            sebi dunjalučke stvari, kako bi svoju snagu usmjerio/la ahiretskim težnjama.&nbsp;<br>Zaista je Allahu draži
+            jak vjernik od slabog. Stoga - ojačajmo! Duhovno, intelektualno, emocionalno, fizički. Radi sebe, radi
+            Njega. 💖<br>
+            <br>
+            <br>Challenge<br>
+            <br>Do sada smo prešli nekoliko Allahovih lijepih imena. Sigurno se pitate, da li ste zapamtili jedno ime
+            ili strahujete da ćete zaboraviti. <br>Evo jednog lijepog metoda: <br>Probudite se i pročitate jedno
+            Allahovo ime, i trudite se da ga zapamtite ali kako!? Neka to ime tog dana bude naziv vašeg dana. Napravite
+            spisak šta sve želite da uradite u ime El-Džebbar, ili Es-Selam. Sigurno će biti i na sabahu i dok putujete
+            i dok ste na poslu&nbsp; i na kraju dana, ime će biti uz Vas jer ćete uputiti dovu, obraćati se Allahu tim
+            Njegovim lijepim imenom...ime u glavi, ime u djelu, ime u srcu. Otvori oči sa Allah a zatvori sa Es-Selam.
+            Napišite sebi s kojim imenom ste započeli a s kojim zatvorili oči. <br>
+            <br>Ne zaboravite uputiti dovu za sve muslimane.<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-13" id="ime10" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">10.
+            El-Džebbar (الجَبَّار) , Onaj kome se ništa ne može oduprijeti.&nbsp;<br>____________&nbsp;<br>
+            <br>Ovo Allahovo lijepo ime spominje se jedanput u Kur’anu, u suri El Hašr, 23. ajetu:&nbsp;<br>
+            <br>"... العَزِيزُ الجَبَّارُ المُتَكَبِّرُ."&nbsp;<br>
+            <br>"...Silni, Uzvišeni, Gordi."&nbsp;<br>
+            <br>U arapskom jeziku El-Džebbar znači: Snažni, Jaki, Veliki.&nbsp;<br>
+            <br>Ez-Zuhri rekao je da Džebbar znači nešto veliko, visoko, nešto što je iznad ruku onih koji ga žele
+            dohvatiti.&nbsp;<br>
+            <br>Kada se odnosi na Uzvišenog, ovo ime ima više značenja:&nbsp;<br>
+            <br>-Onaj koji je visoko uzdignut iznad stvorenja,&nbsp;<br>-Onaj koji popravlja stanja stvorenja i
+            usmjerava ih ka svakoj njihovoj koristi,&nbsp;<br>-Onaj koji sve savladava, radi što On hoće, koji (kako
+            želi) propisuje naredbe i zabrane i niko se u tome ne može suprostaviti.&nbsp;<br>
+            <br>💭 Sva moć, vlast i uzvišenost samo Njemu pripadaju! On je Taj koji će me iz moje nevolje izbaviti,
+            nepravdu otkloniti, jer Gospodar kaže:&nbsp;<br>"I zaista On može, kada nešto hoće, samo za to da rekne:
+            'Budi!' i ono bude." (Ja-sin, 82.)&nbsp;<br>On je iznad svih stvorenja, pa zar da se moje srce ne smiri,
+            kada znam da je Vladar svih vladara, Veliki, Onaj kome se ništa oduprijeti ne može - na mojoj
+            strani?!&nbsp;<br>_______________&nbsp;<br>
+            <br>❗Veličine, uzvišenosti, snage i svemoći dostojan je jedino Allah. Zato budi skroman, ne uzdiži se, ne
+            prizivaj sebi nikakvu veličinu niti posebnost, čuvaj se svega što vodi do oholosti, jer znaj da onome koji
+            se bude oholio Allah pečati srce, i neće čovjek prestati uzdizati sebe, sve dok ne bude upisan u oholnike,
+            pa ga snađe ono što će snaći i njih.&nbsp;<br>
+            <br>💭 A sada, nakon spoznaje ovog velikog imena, El-Džebbar, razmisli i zapitaj se:&nbsp;<br>1. Veličam li
+            Allaha onako kako dolikuje Njegovoj svemoći i uzvišenosti?&nbsp;<br>2. Osjećam li strahopoštovanje kada pred
+            Njim stojim?&nbsp;<br>3. Da li sam svjestan/na da samo On može popraviti moje stanje, i da se samo Njemu
+            potčiniti trebam, jer je samo On dostojan toga?&nbsp;<br>4. Da li se uzdižem nad drugima i smatram sebe
+            boljim/om od ostalih Allahovih robova?&nbsp;<br>5. Da li tlačim i ponižavam ljude oko sebe (suprugu/muža,
+            djecu, prijatelje, poznanike itd.)?&nbsp;<br>6. Da li sam se ustručavao/la iznijeti istinu, ukazati na
+            nepravdu ili uraditi neko djelo pokornosti (nositi hidžab, obaviti namaz na javnom mjestu i sl.) bojeći se
+            prijekora ljudi - a Allah je Taj koji će na Sudnjemu danu nebesa smotati u ljevicu, a Zemlju u desnicu, i
+            reći će: "Ja sam Vladar! Gdje su silnici, gdje su oholnici?" (Muslim), pa zar da strahujem od bilo čijeg
+            prijekora?!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-14" id="ime11" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">11. El-
+            Mutekebbir (المُتَكَبِّرُ)- Gordi, Beskrajno veliki.&nbsp;<br>
+            <br>
+            <br>💬 Kada bi samo bili svjesni ovog uzvišenog Allahovog imena, bili bismo zadovoljni svakom Njegovom
+            odredbom. Jer, On je visoko uzdignut iznad svake nepravde i svakog zuluma, i sve što nam daje- daje nam za
+            naše dobro.&nbsp;<br>
+            <br>
+            <br>Kada bi samo bili svjesni da će se Gordi sa svakim nepravednikom obračunati, ne bismo se brinuli zbog
+            onih koji su nam nepravdu nanijeli.&nbsp;<br>
+            <br>
+            <br>📌 Uzvišeno Allahovo ime El- Mutekebbir, El- Kebir.&nbsp;<br>
+            <br>📌Jezičko značenje: Kebure (كَبُرَ) znači „biti veliki, povećati se“.&nbsp;<br>
+            <br>📌 Allahovo uzvišeno ime El- Mutekebbir se u Kur'anu spominje samo na jednom mjestu, u 23. ajetu sure
+            El- Hašr.&nbsp;<br>
+            <br>„...Silni, Uzvišeni, Gordi.“&nbsp;<br>
+            <br>
+            <br>Allahovo uzvišeno ime El- Kebir je u Kur'anu spomenuto 6 puta.&nbsp;<br>
+            <br>„Znalac vidljivog i nevidljivog; Veliki, Preuzvišeni!“ (sura Er- Ra'd, 9)&nbsp;<br>
+            <br>
+            <br>📌 Značenje Allahovih imena El- Mutekebbir i El- Kebir:&nbsp;<br>
+            <br>1. Onaj koji se uzdiže iznad svega što je loše i iznad svakog nasilja i nepravde.&nbsp;<br>
+            <br>
+            <br>2. Onaj koji je uzdignut iznad osobina stvorenja, Onaj kojem nema ništa slično.&nbsp;<br>
+            <br>
+            <br>3. Onaj koji je Veliki i Uzvišeni, i sve mimo Njega je sićušno.&nbsp;<br>
+            <br>
+            <br>4. Onaj kome pripada vlast nebesa i Zemlje.&nbsp;<br>
+            <br>
+            <br>📌 Allah je Najveći, veći od svega stvorenog. Njegova velična ne može se ni obuhvatiti ni
+            dokučiti.&nbsp;<br>
+            <br>📌 Sintagma „Allahu ekber!“ (Allah je najveći!“)- ukazuje na veličanstvo i veličinu Uzvišenog Allaha.
+            Njome započinjemo namaz i učenje ezana.&nbsp;<br>
+            <br>📌 Gordost je svojstvo koje priliči jedino Allahu Uzvišenom, dok kod ljudi gordost i oholost su jako
+            loše osobine. Iblis l.a. je zbog oholosti proklet, a Allah dž.š. obećava da će svi oholi biti u
+            Džehennemu.&nbsp;<br>
+            <br>„A zar u Džehennemu neće biti boravište oholih?“ (sura Ez- Zumer, 60)&nbsp;<br>
+            <br>Allah pečati srce svakog čovjeka koji je ohol i nasilan: „Tako Allah pečati srce svakog oholog i
+            nasilnog.“ (sura El- Mu'min, 35)&nbsp;<br>
+            <br>
+            <br>📌 Poslanik Muhammed s.a.v.s. je rekao: „Neće ući u Džennet onaj u čijem srcu bude koliko i trun
+            oholosti.“&nbsp;<br>
+            <br>📌 U čovjekovom srcu ne smije biti oholost bilo kojeg oblika, ni zbog vlasti, ni zbog imetka, ni zbog
+            znanja. Sve ono što imamo zapravo pripada Uzvišenom Allahu a nama je dato samo na korištenje.&nbsp;<br>
+            <br>📌 Čovjek ne smije da sebe smatra boljim od drugih ljudi, niti da traži znanje kako bi druge ljude njime
+            potcjenjivao.&nbsp;<br>
+            <br>📌 Ukoliko nam je data vlast, ili ukoliko imamo moć da sprovedemo silu nad nekim, trebamo se sjetiti da
+            je Uzvišeni Allah Onaj koji je visoko uzdignut iznad nepravde, zuluma i nasilja. Trebamo biti svjesni da
+            ćemo za svaku nepravdu i zulum polagati račun pred Njim.&nbsp;<br>
+            <br>
+            <br>💭 Allahovo uzvišeno ime El- Mutekebbir nas podsjeća na našu sićušnost, slabost i stvarnu nemoć. Jedino
+            On je dostojan da bude Gordi. Nama ne priliči oholost. Svi oni koji su se na zemlji oholili (poput Faraona)-
+            završili su neslavno. Allah Uzvišeni ne voli kada se Njegovi robovi ohole. Zato se trebamo čuvati oholosti.
+            Jedan od načina da se sačuvamo oholosti jeste i izgovaranje riječi: „ La havle ve la kuvvete illa billah.“
+            (Nema snage ni moći osim kod Allaha.) Ove riječi podsjećaju čovjeka na njegovu slabost i upućuju ga na to da
+            jedino Allahu pripadaju snaga i moć.&nbsp;<br>
+            <br>
+            <br>❗ Jedna od vrsta oholosti jeste i odbijanje istine. Istinu treba prihvatiti ma od koga dolazila. Oholost
+            je i ne priznati grešku. Oholost je i ne biti samokritičan.&nbsp;<br>
+            <br>
+            <br>❓ Pitanja za razmišljanje:&nbsp;<br>
+            <br>1. Da li smo zadovoljni Allahovom odredbom i da li u našem srcu imamo i klicu sumnje u Allahovu
+            pravednost?&nbsp;<br>2. Jesmo li od onih koji ne prihvataju istinu iz oholosti?&nbsp;<br>
+            <br>3. Da li se oholimo prema Allahovim stvorenjima?&nbsp;<br>
+            <br>4. Da li se odnosimo prema Allahovim stvorenjima nepravedno i nasilno? Da li koristimo svoju silu i moć
+            nad ženama, djecom ili slabijim od sebe?&nbsp;<br>
+            <br>5. Da li smo od onih koji priznaju svoju grešku pred Allahom ponizmo?&nbsp;<br>
+            <br>6. Da li smo od onih koje oholost ne sprječava od toga da zatraže halal onome kome su nepravdu
+            učinili?&nbsp;<br>
+            <br>7. Jesmo li ubijeđeni da ćemo i mi i svi oni koji čine nepravdu nama ili nekome drugom za to odgovarati
+            El- Mutekebbiru?&nbsp;<br>
+            <br>8. Znamo li da nas oholost unazađuje i da nas sprječava od t
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-15" id="ime12" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">12.
+            El-Hāliq (الخَالِقُ) - Onaj Koji je sve stvorio i stvara&nbsp;<br>
+            <br>✨Allah, subhānehū ve te'ālā, pojasnio je Svoje pravo kod robova, a to je da je On Taj Koji se istinski
+            obožava. On je Stvoritelj Koji je stvorenja iz ničega stvorio, Onaj Koji im je podario život kako bi Ga
+            obožavali i na blagodatima Mu zahvaljivali.&nbsp;<br>
+            <br>„O ljudi! Sjetite se blagodati Allahove prema vama! Ima li ikakav stvoritelj pored Allaha da vas
+            opskrbljuje iz neba i Zemlje? Nema istinskog boga osim Njega, pa kud se odvraćate?“ (Fatir, 3)&nbsp;<br>
+            <br>✨Uzvišeni Allah je stvorio nebesa i Zemlju i sva ostala stvorenja, a ovo stvaranje predstavlja jedan od
+            najvećih znakova koji upućuju na Stvoritelja (El-Hāliqa), azze ve dželle.&nbsp;<br>
+            <br>„Zar su oni bez Stvoritelja stvoreni ili su oni sami sebe stvorili?! Zar su oni nebesa i Zemlju
+            stvorili?! Ne, nego oni neće da vjeruju.“ (Et-Tur, 35-36)&nbsp;<br>
+            <br>✨Uzvišeni Allah je Sebe nazvao El-Hāliq i ovo ime je jedno od najpoznatijih Allahovih imena, jer ovakav
+            izraz i njegovo značenje ne odnose se ni na koga drugog mimo Allaha. Dakle, stvorenjima nije dozvoljeno da
+            se nazovu El-Hāliq, jer ovo ime ne dolikuje nikome drugom izuzev Uzvišenom Allahu.&nbsp;<br>
+            <br>🖋️Allahovo ime El-Hāliq se u Kur'anu spominje na jedanaest mjesta.&nbsp;<br>
+            <br>✨Rabb, Gospodar, ne može biti niko osim Onaj Koji opskrbu daje stvorenjima, Koji stvara stvorenja iz
+            ničega, Onaj Koji usmrćuje, oduzima život. On najbolje poznaje Svoja stvorenja i brine se o Svojim
+            stvorenjima tako što im daje i pruža opskrbu iz nebesa i Zemlje.&nbsp;<br>
+            <br>✨Zar Onaj Koji posjeduje ove uzvišene osobine ne zaslužuje da bude El-Ilāh – Onaj Koji se obožava, Onaj
+            pred Kojim treba iskazati poniznost, skrušenost, ljubav isključivo radi Njega.&nbsp;<br>
+            <br>💭Razmisli:&nbsp;<br>1. Zar da zbog Onog Koji te stvorio i život ti darovao ne povećaš svoju iskrenost i
+            uljepšaš svoje ponašanje i misli kada te samo On vidi i čuje?&nbsp;<br>
+            <br>2.&nbsp;Uzvišeni Allah nam je naša tijela skladnim učinio i zdravlje darovao. Koliko smo svjesni da i
+            naše tijelo kod nas ima pravo te da se zbog toga moramo pobrinuti o našem tijelu i zdravlju?&nbsp;<br>
+            <br>3.&nbsp;Koliko često razmišljaš o Allahovom stvaranju? Kada bi to razmišljanje postalo često u našem
+            životu, rijetko bismo posumnjali da će nam se Onaj Koji je sve savršeno stvorio odazvati na
+            dovu.&nbsp;<br>Allah, doista, sve može.&nbsp;<br>
+            <br>4.&nbsp;Zar pred Stvoriteljem svega što nas okružuje imamo pravo oholiti se nad bilo kime?&nbsp;<br>
+            <br>5. Da li si razmišljao/la kojim te talentom Gospodar, Koji je el-Hāliq, obdario, kojim možeš koristiti i
+            sebi i društvu?&nbsp;<br>
+            <br>6. Niko, ali baš niko ne može stvarati osim Allaha. Zar nije ljepota što to svojstvo pripada samo Njemu
+            Koji nas, kao robove, najviše voli?&nbsp;<br>____________________________&nbsp;<br>💌Kada sljedeći put nakon
+            razmišljanja o ovom Allahovom imenu sedždu u namazu učiniš, oduži sa sedždom.&nbsp;<br>
+            <br>Primijeni jedan sunnet Allahovog Poslanika, alejhisselām.&nbsp;<br>Poslanik, alejhisselām, je imao
+            običaj učiti ovu dovu na sedždi:&nbsp;<br>
+            <br>اللَّهُمَّ لَكَ سَجَدْتُ وَبِكَ آمَنْتُ وَلَكَ أَسْلَمْتُ سَجَدَ وَجْهِي لِلَّذِي خَلَقَهُ وَصَوَّرَهُ
+            وَشَقَّ سَمْعَهُ وَبَصَرَهُ تَبَارَكَ اللَّهُ أَحْسَنُ الْخَالِقِينَ&nbsp;<br>
+            <br>(Allahu moj, samo Tebi sedždu činim i u Tebe vjerujem. Samo se Tebi potpuno predajem. Moje lice čini
+            sedždu Onome Koji ga je u najljepšem obliku stvorio, te mu čulo sluha i vid načinio. Uzvišen neka je Allah,
+            jedini i najljepši Stvoritelj!)&nbsp;<br>
+            <br>(Muslim, Nesai, Darekutni, Ebu-Avvane)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-16" id="ime13" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">13.
+            El-Bari' - Onaj koji divno stvara<br>
+            <br>📌Da se podsjetimo: Prethodno ime našeg Gospodara (El-Halik) značilo je: Onaj Koji sve stvara. Danas
+            ćemo se upoznati sa 13. Allahovim imenom El-Bari' – Onaj Koji divno stvara. Poznavajući značenja ova dva
+            imena, kako da ne budeš zahvalan/a i zadovoljan/a, a stvorio te Onaj Koji sve što stvara, divno
+            stvara?!&nbsp;<br>
+            <br>•U arapskom jeziku riječ 'el-berijje' znači 'zemlja', a ima značenja i: osloboditi se, udaljiti se,
+            riješiti se, prihvatiti, naći opravdanje, opomenuti i popraviti.&nbsp;<br>Također, za čovjeka se kaže:
+            Beri'e redžulu min hazel meredi (Čovjek se izliječio od ove bolesti), a ova riječ i u Kur'anu ima značenje
+            stvorenja (Bejjine, 7.)&nbsp;<br>
+            <br>•Allahovo ime El-Bari' u Kur'anu je spomenuto tri puta: El-Hašr, 24. i 54.ajet sure El-Bekare (dva
+            puta)&nbsp;<br>Ime El-Bari' ima sljedeća značenja:&nbsp;<br>1.Onaj koji je stvorio stvorenja i učinio da
+            postoje&nbsp;<br>2.Onaj koji je stvorenja različitim učinio; naprimjer: jedne je stvorio bijelim, jedne
+            crnim, neka stvorenja su muškog roda, neka ženskog i slično.&nbsp;<br>3.Onaj koji je stvorio i oblikovao
+            čovjeka od zemlje.&nbsp;<br>„Od zemlje vas stvaramo i u nju vas vraćamo i iz nje ćemo vas po drugi put
+            izvesti.“&nbsp;<br>4.Allah je stvorio stvorenja bez nedostatka, učinio ih skladnim.&nbsp;<br>„Ti u onome što
+            Milostivi stvara ne vidiš nikakva nesklada, pa ponovo pogledaj vidiš li ikakav nedostatak."&nbsp;<br>
+            <br>•Kada se odnosi na Allaha dž.š., ono ima sljedeća značenja:&nbsp;<br>El-Hulejmi navodi da postoje
+            dva:&nbsp;<br>~Prvo: Allah je taj koji je učinio postojanim ono što je prije toga bilo u Njegovom znanju. Na
+            ovo značenje nas upućuje 22.ajet sure El-Hadid. Dakle, nije u redu misliti da je to Uzvišeni Allah stvorio
+            tek tako iz ničega, a da nije imao prije znanje o tome. Zbog toga je ispravno pripisati Allahu da je
+            Stvoritelj, Onaj koji je imao znanje o tome prije stvorenja.&nbsp;<br>
+            <br>~Drugo: Onaj koji preokreće (Kabul), to znači da je Allah iz ničega stvorio vodu, zrak, Zemlju, vatru…,
+            a zatim je iz toga stvorio različita fizička tijela, o čemu se govori u mnogim ajetima. Naprimjer: „Mi od
+            vode sve živo stvaramo“, „Jedan od dokaza Njegovih je što vas od zemlje stvara i odjednom vas, o ljudi,
+            svuda ima razasutih“ itd.&nbsp;<br>
+            <br>💭Ako nas Gospodar sve stvara u najljepšem obliku i ako je On El-Bari'-Onaj koji divno stvara, zašto
+            postoje Njegova stvorenja sa nedostacima? Odgovor je jasan! Allah je El-Hakim i El-'Alim (Mudri i
+            Sveznajući) i kao što stoji u ajetu: „On neće biti pitan za ono što radi, a oni će biti pitani“. Tako da,
+            istinski vjernik ne treba razmišljati na ovaj način i postavljati takva pitanja. Također, Gospodar je sebi
+            zabranio nepravdu, stoga nam je to još jedan od dokaza da čvrsto u Njega vjerujemo i da se ovim bave samo
+            oni koji su zalutali.&nbsp;<br>
+            <br>•El-Bari' zapravo je El-Halik (Stvoritelj), a El Hattabi, rahimehullah, je rekao: Ovaj izraz ima posebno
+            značenje, koje se odnosi na stvaranje živih bića, a vrlo rijetko se koristi za ostala stvorenja poput
+            nebesa, Zemlje i brda. Dok Ibn Kesir, rahimehullah, kaže: …Pod pojmom el-ber'u se misli na izvršenje i
+            pojavljivanje u svijetu postojanja onoga što je određeno i utvrđeno…“.&nbsp;<br>
+            <br>
+            <br>Zar nisi ponosan/a, sićušni insanu? Zar u tvome srcu i nakon ovih saznanja može ne biti zahvalnosti,
+            poniznosti, straha, nade od (u) Onog koji te divno stvori i Koji, kao što smo iz prethodnih imena saznali, o
+            tebi brigu vodi i tvoje potrebe ispunjava?&nbsp;<br>
+            <br>💭Razmisli…&nbsp;<br>
+            <br>Zar nisu dokazi svuda oko tebe? Zar ne vidiš kako iz godine u godinu tvoj Gospodar umrtvljuje i
+            oživljava, zar te prvi cvjetovi i prve pahulje na to ne podsjete? Zar ti nije dovoljan primjer djeteta koje
+            On u majčinoj utrobi opskrbljuje i nakon određenog perioda život u njega udahne? Zar nije mudrost u tome da
+            je sve na Zemlji i nebesima, od najsićušnijeg do najvećeg stvorenja, zasluga Njegova?&nbsp;<br>„Doista se
+            Allah ne ustručava za primjer navesti mušicu ili nešto sićušnije od nje; oni koji vjeruju - ta, oni znaju da
+            je to Istina od Gospodara njihova…“ (El-Bekare, 26.)&nbsp;<br>
+            <br>💭Još mnogo pitanja možeš sam/a sebi svakodnevno postaviti, jer, kao što rekoh, dokazi su svuda oko
+            tebe. Razmisli do sljedećeg imena koje će ti govoriti o tome da Allah stvara u najljepšem obliku.
+            😊&nbsp;<br>
+            <br>"I ako biste Allahove blagodati brojali, ne biste ih nabrojali. – Čovjek je, uistinu, nepravedan i
+            nezahvalan." (Ibrahim, 34)<br>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-17" id="ime14" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">14.
+            El-Musavvir (المُصَوِّرُ) - Onaj Koji daje najljepše oblike, dželle ve 'ala&nbsp;<br>
+            <br>U arapskome jeziku glagol "tesavvere" (َتَصَوَّر) znači: oblikovati se, formirati se, zamisliti
+            isl.&nbsp;<br>
+            <br>Kada se odnosi na uzvišenog Allaha, ime El-Musavvir ima sljedeće značenje:&nbsp;<br>
+            <br>Ibn Džerir, rhm., rekao je: "El-Musavvir - Onaj koji oblikuje i stvara kako On želi."&nbsp;<br>
+            <br>El-Hattabi, rhm., rekao je: "El-Musavvir je Onaj koji je stvorio i načinio stvorenja u različitim
+            oblicima, kako bi se međusobno raspoznavali."&nbsp;<br>______________&nbsp;<br>
+            <br>Ovo Allahovo ime se spominje jednom u Kur'anu, 24.-tom ajetu sure El-Hašr, i na više mjesta u obliku
+            glagola:&nbsp;<br>
+            <br>(هُوَ ٱلَّذِی یُصَوِّرُكُمۡ فِی ٱلۡأَرۡحَامِ كَیۡفَ یَشَاۤءُۚ)&nbsp;<br>
+            <br>"On je Taj Koji vas oblikuje u matericama kako On hoće." (Sura Āli-ʿImrān, 6.)&nbsp;<br>
+            <br>______________&nbsp;<br>
+            <br>U ovim danima kada se nakon ledene zime budi novi život svjedočimo Allahovoj veličini i ljepoti
+            Njegovoga stvaranja. On iz mrtvog stvara živo i to u najljepšem skladu, pa kako da Ti pokorni ne budemo, da
+            Te ne slavimo i veličamo, Gospodaru naš, kad si Ti El-Musavvir, Onaj koji daje najljepše oblike i najljepše
+            stvara?!&nbsp;<br>
+            <br>"Na Zemlji su dokazi za one koji čvrsto vjeruju, a i u vama samima - zar ne vidite?" (Ez-Zarijat,
+            20-21.)&nbsp;<br>______________&nbsp;<br>
+            <br>Insanu, budi zadovoljan i zahvalan Allahovim odabirom tvoga stvaranja, jer ti na to - ama baš nikakvoga,
+            utjecaja nisi imao i nikada se ne uspoređuj sa drugima!&nbsp;<br>Svako je poseban na svoj način, unikatan, i
+            to je Njegov odabir za tebe. Zar da se svojim nezadovoljstvom na Allaha ljutiš, jer misliš da imaš određene
+            nedostatke pri sebi?&nbsp;<br>Naučio si da je On, El-Hakim, i da se - samo Njemu poznata, mudrost krije iza
+            toga što je odabrao za tebe takav oblik.&nbsp;<br>
+            <br>"to je djelo Allahovo – Koji je sve savršeno stvorio; On, doista, u potpunosti zna ono što radite."
+            (En-Neml, 88.)&nbsp;<br>______________&nbsp;<br>
+            <br>❓Razmisli i zapitaj se:&nbsp;<br>1. Da li ti se povećao iman nakon spoznaje ovoga Allahovog lijepog
+            imena, znajući za Njegovu neopisivu snagu i moć koju posjeduje - stvaranje cijeloga svijeta, stvorenja čiji
+            broj ne zna niko osim Allaha...?&nbsp;<br>2. Znaš li, insanu, da nisi stvoren radi igre i zabave, već radi
+            robovanja Allahu uzvišenom? Preispitaj svoje stanje i zapitaj se koliko si Mu pokoran.&nbsp;<br>3. Da li si
+            zadovoljan onim što vidiš kada se u ogledalu pogledaš? Ako nisi, znaš li onda da nisi zadovoljan Allahovim
+            odabirom tvoga stvaranja?&nbsp;<br>A ako jesi, pa si možda i previše zadivljen, pazi da narcis ne postaneš i
+            da te u oholost ne odvede!&nbsp;<br>Jer, znaj da ljepota tvoja - prolazna je, i da je ona samo poklon od
+            Uzvišenog.&nbsp;<br>4. Koliko često razmišljaš o dokazima koji su svuda oko tebe: Allahovo stvaranje raznih
+            vrsta biljaka i životinja, dolina i planina, pustinja, rijeka i mora, šarolikosti i mnogobrojnosti ljudi,
+            njihovi jezici i boje koža...?&nbsp;<br>
+            <br>"U stvaranju nebesa i Zemlje, u smjeni noći i dana, u lađi koja morem plovi s korisnim tovarom za ljude
+            i u vodi koju Allah spušta s neba, pa tako u život vraća zemlju nakon njenog mrtvila, po kojoj je rasijao
+            svakojaka živa bića, u usmjeravanju vjetrova i oblacima koji između neba i Zemlje lebde – ima, doista,
+            znakova za one koji razumiju." (El-Bekare, 164.)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-section-18" id="ime15" data-image-width="869" data-image-height="1090">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-49 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">15.
+            El-Gaffar (الغَفّارُ ) Onaj koji mnogo prašta&nbsp;<br>
+            <br>Jezičko značenje: el-gafr znači pokrivač, zaklon&nbsp;<br>Allah je Onaj Koji zna tajne svojih robova,
+            ono što je u njihovim grudima i mislima.&nbsp;<br>Allahova milost obuhvata sve, i zato su mnogi grijesi,
+            mržnja ostali u sjeni, skriveni, a mnoge je Allah i oprostio, jer On najbolje Zna i mnogo prašta-On je
+            El-Gaffar.&nbsp;<br>
+            <br>Ovo Allahovo lijepo ime spominje se 5 puta u Kur'anu, a svojstvo koje Mu se pripisuje u suri El-Burudž,
+            je El-Vedud, Onaj Koji je pun ljubavi.&nbsp;<br>Zar ovaj ajet nam nije dovoljan pokazatelj, da mi kao
+            Njegova stvorenja Koji je El-Gaffar, El-Vedud, budemo oni koji grijehe i mahane drugih pokrivaju!? Zar ne
+            trebamo biti oni koji ljubav u ime Allaha pokazuju!? Ako smo i ako ćemo biti, budimo to jer želimo Njegovo
+            zadovoljstvo.&nbsp;<br>
+            <br>Ibn Hadžer El-Askelani u svom djelu Fethul-bari, prenosi mišljenje Imama Nevevija, da sve dok se čovjek
+            kaje i oprost traži za učinjene grijehe, Allah će ti ih oprostiti (mišljenje je dato kao komentar na
+            hadis)&nbsp;<br>Ibn Kajjim, rekao je da Allahovo opraštanje grijeha Svojim robovima je Njegova neizmjerna
+            dobrota i milost jer je On neovisan od bilo čega.&nbsp;<br>
+            <br>💬Razmislite zašto smo preveli ovo Allahovo ime kao Onaj koji mnogo prašta, a jezičko značenje je Onaj
+            Koji pokriva (zaklon)?&nbsp;<br>
+            <br>Koliko smo samo puta mahanu ili grijeh prekrili a da je Allah naše stanje, grijeh ili mahanu
+            prekrio!?&nbsp;<br>Zamislite samo kada bi mržnja i sve loše emocije koje se javljaju u grudima ljudi izašle
+            na površinu!? Pa Allah je doista hvale dostojan. On je taj Koji skriva i mnogo prašta.&nbsp;<br>
+            <br>Primite ovo ime u okrilje Vaših misli, pa će postati djelo, pa će postati navika bez koje ne možete, a
+            nije li divno kada tuđe grijehe prekrivamo, i kada u ime Allaha oprostimo, i tako veću deredžu kod Allaha
+            zaslužimo.&nbsp;<br>Pa neka je Uzvišen Onaj Koji je Milostiv, Vladar, Onaj čija je veličini neizmjerna, Koji
+            sve čuje, Koji sve vidi, Čije je znanje beskrajno, Koji je o svemu obaviješten, Sveti, Izvor milosti i
+            spasa, Koji daje sigurnost, Koji sve nadgleda, Silni, Gordi, Stvoritelj, Koji divno stvara, i najljepše
+            oblike daje, Koji mnogo poklanja, Beskrajno zahvalni, i Koji mnogo prašta...
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-image u-section-19" id="sec-600d" data-image-width="1280"
+    data-image-height="861">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-container-style u-custom-color-9 u-expanded-width-xs u-group u-opacity u-opacity-55 u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <h2 class="u-align-center u-text u-text-1">SEDAM NEBESA, KURSIJJ I ARŠ&nbsp;<br>[Dirljivo predavanje]
+          </h2>
+          <p class="u-align-center u-text u-text-2">Preporučila bih vam da pogledate i ovaj video, koji nam govori o
+            veličini onoga što je stvorio naš Gospodar, El-Bari, Koji divno stvara.&nbsp;</p>
+        </div>
+      </div>
+      <div class="u-align-left u-expanded-width-sm u-expanded-width-xs u-video u-video-1">
+        <div class="embed-responsive embed-responsive-1">
+          <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item"
+            src="https://www.youtube.com/embed/bIRDMpEFILU?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0"
+            frameborder="0" allowfullscreen=""></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-image u-lightbox u-section-20" id="carousel_ce80" data-image-width="313"
+    data-image-height="210">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div
+        class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-repeater u-list-1">
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-1">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-1">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-1">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-2">
+                <div
+                  class="u-absolute-hcenter u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-1">
+                </div>
+                <h3 class="u-align-center u-text u-text-1"><i style="">El-Kahhār</i>
+                  <br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-1"
+                  data-image-width="1135" data-image-height="1599" src="images/Qahar.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-2">Zato što si Ti&nbsp;<br>El-Kahhar,&nbsp;<br>borim se sa svojim
+                  nefsom&nbsp;<br>ne dopuštajući mu da me<br>savlada.
+                </p>
+                <a href="#ime16-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-1">القهّار</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-2">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-3">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-2">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-4">
+                <div
+                  class="u-absolute-hcenter u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-2">
+                </div>
+                <h3 class="u-align-center u-text u-text-3"><i>El-Vehhāb</i>
+                  <br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-2"
+                  data-image-width="1137" data-image-height="1600" src="images/El-Vehabb.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-4">Zato što si ti El-Vehhāb, darovao si me najljepšim poklonom.
+                  Darovao si moju dušu da Te voli, da Ti se klanja i da uči Tvoje uzvišene riječi.</p>
+                <a href="#ime17-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-2">الوهّاب</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-3">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-5">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-3">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-6">
+                <div
+                  class="u-absolute-hcenter-lg u-absolute-hcenter-md u-absolute-hcenter-sm u-absolute-hcenter-xs u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-3">
+                </div>
+                <h3 class="u-align-center u-text u-text-5">Er- Rezzāk<br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-3"
+                  data-image-width="939" data-image-height="1279" src="images/Rezzaq.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-6">Zato što si Ti&nbsp;<br>Er- Rezzāk,&nbsp;<br>ja se ne brinem
+                  za svoju<br>nafaku.&nbsp;<br>❤<br>
+                </p>
+                <a href="#ime18-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-3">الرزّاق</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-4">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-7">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-4">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-8">
+                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-4">
+                </div>
+                <h3 class="u-align-center u-text u-text-7">El-Fettāh<br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-4"
+                  data-image-width="1127" data-image-height="1600" src="images/Fettah.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-8">Zato što si Ti El-Fettāh,&nbsp;<br>ja se ne brinem i ne
+                  sumnjam da će nakon iskušenja blagodati uslijediti.<br>&nbsp;❤️<br>
+                </p>
+                <a href="#ime19-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-4">الفتّاح</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-5">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-9">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-5">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-10">
+                <div
+                  class="u-absolute-hcenter-sm u-absolute-hcenter-xs u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-5">
+                </div>
+                <h3 class="u-align-center u-text u-text-9"><b style="">EI-Alim</b>
+                  <br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-5"
+                  data-image-width="1137" data-image-height="1600" src="images/viber_image_2021-03-22_14-39-29.jpg"
+                  data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0"
+                  data-animation-direction="X">
+                <p class="u-align-center u-text u-text-10">
+                  <span style="font-weight: 400;"></span>Zato što si ti El 'Alīm (Sveznajući), trudim se da u mojim
+                  mislima i djelima bude samo ono s čime si Ti zadovoljan.<br>
+                </p>
+                <a href="#ime20-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-5">العليم</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-6">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-11">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-6">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-12">
+                <div
+                  class="u-absolute-hcenter-md u-absolute-hcenter-sm u-absolute-hcenter-xs u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-6">
+                </div>
+                <h3 class="u-align-center u-text u-text-11"><b>EI-Kabid</b>
+                  <br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-6"
+                  data-image-width="421" data-image-height="640" src="images/slika2.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-12">
+                  <span style="font-weight: 700;">Bit će dopunjeno...<br>
+                  </span>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </p>
+                <a href="#ime21-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-6">القابض</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-7">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-13">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-7">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-14">
+                <div
+                  class="u-absolute-hcenter-lg u-absolute-hcenter-md u-absolute-hcenter-sm u-absolute-hcenter-xs u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-7">
+                </div>
+                <h3 class="u-align-center u-text u-text-13">EI-Basit<br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-7"
+                  data-image-width="421" data-image-height="640" src="images/slika2.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-14">
+                  <span style="font-weight: 700;">Bit će dopunjeno...<br>
+                  </span>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </p>
+                <a href="#ime10-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-7">الباسط</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-8">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-15">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-8">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-16">
+                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-8">
+                </div>
+                <h3 class="u-align-center u-text u-text-15"><b>EI-Hafid</b>
+                  <br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-8"
+                  data-image-width="421" data-image-height="640" src="images/slika2.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-16">
+                  <span style="font-weight: 700;">Bit će dopunjeno...<br>
+                  </span>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </p>
+                <a href="#ime11-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-8">الخافض</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-9">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-17">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-9">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-18">
+                <div
+                  class="u-absolute-hcenter-xs u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-9">
+                </div>
+                <h3 class="u-align-center u-text u-text-17">Er-Rafi'<br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-9"
+                  data-image-width="421" data-image-height="640" src="images/slika2.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-18">
+                  <span style="font-weight: 700;">Bit će dopunjeno...<br>
+                  </span>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </p>
+                <a href="#ime12-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-9">الرّافع</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-10">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-19">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-10">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-20">
+                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-10">
+                </div>
+                <h3 class="u-align-center u-text u-text-19">El-Mu'izz<br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-10"
+                  data-image-width="421" data-image-height="640" src="images/slika2.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-20">
+                  <span style="font-weight: 700;">Bit će dopunjeno...<br>
+                  </span>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </p>
+                <a href="#ime13-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-10">المُعِزّ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-11">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-21">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-11">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-22">
+                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-11">
+                </div>
+                <h3 class="u-align-center u-text u-text-21">El-Muzill<br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-11"
+                  data-image-width="421" data-image-height="640" src="images/slika2.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-22">
+                  <span style="font-weight: 700;">Bit će dopunjeno...<br>
+                  </span>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </p>
+                <a href="#ime14-popup"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-11">المُذِلّ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="u-align-center u-container-style u-gradient u-list-item u-repeater-item u-video-cover u-list-item-12">
+          <div
+            class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-xl u-container-layout-23">
+            <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-group-12">
+              <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-24">
+                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-12">
+                </div>
+                <h3 class="u-align-center u-text u-text-23">Es-Semi'<br>
+                </h3>
+                <img alt="" class="u-border-2 u-border-grey-75 u-expanded-width u-image u-image-default u-image-12"
+                  data-image-width="421" data-image-height="640" src="images/slika2.jpg" data-animation-name="flipIn"
+                  data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                <p class="u-align-center u-text u-text-24">
+                  <span style="font-weight: 700;">Bit će dopunjeno...<br>
+                  </span>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </p>
+                <a href="#"
+                  class="u-align-center u-border-0 u-btn u-button-style u-palette-3-base u-btn-12">السّميع<span
+                    style="font-weight: 700;">
+                    <span style="font-size: 1rem;">
+                      <span style="font-weight: 400;">
+                        <span style="font-weight: 700;"></span>
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-left u-clearfix u-image u-section-21" id="ime21" data-image-width="1080"
+    data-image-height="1350">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-50 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">21
+          </p>
+          <img src="images/viber_image_2021-03-24_19-22-09.jpg" alt="" class="u-image u-image-default u-image-1"
+            data-image-width="1108" data-image-height="1600">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-left u-clearfix u-image u-section-21" id="ime22" data-image-width="1080"
+  data-image-height="1350">
+  <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+    <div
+      class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-50 u-shape-round u-group-1">
+      <div class="u-container-layout u-container-layout-1">
+        <p class="u-text u-text-1">22
+        </p>
+        <img src="images/viber_image_2021-03-24_19-22-09.jpg" alt="" class="u-image u-image-default u-image-1"
+          data-image-width="1108" data-image-height="1600">
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="u-align-left u-clearfix u-image u-section-21" id="ime20" data-image-width="1080"
+    data-image-height="1350">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-50 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-text u-text-1">20. El 'Alīm ( ُالْعَلِيم) - Sveznajući, Onaj čije je znanje beskrajno. <br>
+            <br>▪️El 'Alim ُالْعَالِم - Znalac <br>▪️El 'Alīm ُالْعَلِيم-Onaj Koji sve zna <br>▪️El 'Allam ُالْعَلَّام-
+            Apsolutni znalac <br>
+            <br>▫️Imenica el 'ilmu u arapskom jeziku označava znanje, a suprotno tome je džehl-neznanje. <br>
+            <br>Na važnost (Allahovog) znanja ukazuje nam činjenica da je Allahovo ime ُالْعَلِيم (El-'Alīm) u Kur'anu
+            spomenuto čak 157 puta. <br>"Gospodar tvoj stvara sve i On je Sveznajući." (El-Hidžr, 86.) <br>
+            <br>Allahovo ime ُالْعَالِم (El-'Alim) spomenuto je 13 puta. <br>"On zna nevidljivi i vidljivi svijet. On je
+            Veličanstveni i Uzvišeni." (Er-Ra'd, 9.) <br>
+            <br>Allahovo ime ُالْعَلَّام (El-'Allam) spomenuto je na četiri mjesta. <br>"...Ti znaš ono što ja znam, a
+            ja ne znam šta Ti znaš - samo Ti jedini sve što je skriveno znaš." (El-Maide, 116.) <br>
+            <br>El Hattabi, rahimehullah, rekao je: On je Poznavalac svih tajni i svega što je skriveno, što znanje
+            stvorenja ne može dokučiti, kao što Allah u Kur'anu kaže: Zaista, Allah zna šta prsa kriju." (Lukman, 23.)
+            <br>
+            <br>💭Zastani sad na trenutak! Da li si svjestan/a da za Gospodara imaš Onog Koji (apsolutno) sve zna?!
+            Zaista, ti si samo praška. Ne oholi se, ne hvali se svojim znanjem, jer da nije Njegove milosti, zaista, mi
+            ne bismo ništa znali. <br>"On daruje znanje onome kome On hoće, a onaj kome je znanje darovano, darovan je
+            blagom neizmjernim..." (El-Bekare, 269.) <br>
+            <br>▪️Čvrsto vjeruj u ova tri Allahova uzvišena imena jer: <br>- Učenjaci su rekli da je spoznaja ovih imena
+            čovjekov najveći opominjač, upućivač na dobro i ono što odvraća od lošeg. <br>- Put ka bogobojaznosti. Ne
+            možeš biti bogobojazan, ukoliko nemaš znanja. <br>"...A Allaha se boje od robova Njegovih-učeni..." (Fatir,
+            28.) <br>"Ko bude više o Allahu znao, više će Ga se bojati!" (Imam Šafija) <br>- Istinski vjernik spoznajom
+            ovog Allahovog imena potvrđuje da Allah posjeduje potpuno (apsolutno) znanje, koje obuhvata sve i niko od
+            stvorenja mu nije sličan, ma kakvo znanje posjedovao. <br>➡️Razlika između znanja stvorenja i znanja
+            Stvoritelja: Specifičnost Allahovog potpunog znanja se ogleda u činjenici da Ga nikada ne obuzima neznanje i
+            nemar, zaborav i slično. Allahu ništa nije slično, za razliku od Njega, slabašna stvorenja rađaju se u
+            potpunom neznanju, a zatim poslije rađanja uče malo-pomalo (Jasin, 79.). <br>- Blagodat spoznaje ovih
+            veličanstvenih Allahovih imena nalaže vjerniku da uloži maksimalan trud u sticanju lijepih moralnih osobina
+            i klonjenju od svih loših osobina. Rob se plaši i stidi svog Gospodara u svojim riječima i djelima -
+            vidljivim i nevidljivim. Ova spoznaja povećava želju za još većim upoznavanjem Stvoritelja preko Njegovih
+            savršenih osobina. <br>
+            <br>Allah je Onaj Koji: <br>"Sve zna i sve može" (Er-Rum, 54.) <br>"Neizmjerno dobar i On sve zna" (En-Nur,
+            32.) <br>"Sve čuje i sve zna" (El-En'am, 115.) <br>"Sve zna i Mudar je" (En-Nisa, 11.) <br>"Sve zna i blag
+            je" (El-Hadždž, 59.) <br>"Sve zna i o svemu je obaviješten" ( Lukman, 33.) itd <br>
+            <br>🍂Gospodaru se ne može sakriti ništa. <br>"U njega su ključevi svih tajni, samo ih On zna. I On jedini
+            zna šta je na kopnu i šta je u moru. I nijedan list ne opadne, a da On za njega ne zna. I nema zrna u
+            tminama Zemlje, niti ima ičeg svježeg, niti ima ičeg suhog - ičeg što nije u jasnoj Knjizi." [El-En'am,
+            59.]🍂 <br>
+            <br>💭Ako tvoj Gospodar zna sve ovo, zar misliš da ne zna ono što tajno pomisliš, što u određenoj skupini
+            ljudi ili javno kažeš? Zar misliš da si uspio ako o nekome iza leđa pričaš, a Gospodar tvoj te uvijek
+            posmatra i uvijek zna sve što je u tvome srcu i na tvome jeziku? Budi svjestan/a da su uz tebe i meleki
+            pisari, kako bi za sve svjedoci (za ili protiv tebe) bili. <br>Prva naredba nam je "Čitaj, u ime Gospodara
+            Tvoga..." ( El-Alek, 1.). <br>Dužnost nam je sticati znanje, zar se ne stidimo Onog Koji nas je stvorio
+            (Sveznajućeg), zar nismo zahvalni što nam je On to omogućio? <br>
+            <br>Abdullah b.Omer je rekao: Kada bi ljudi udjeljivali zlata kao što je brdo Uhud, ništa im ne vrijedi ako
+            ne vjeruju u Allahov kader." Musliman mora čvrsto vjerovati da Allah zna sve ono što je bilo, što je sada i
+            što će biti. Također, ono što bi bilo kad bi bilo, i što bi bilo kad ne bi bilo. "Da su pošli s vama, bili
+            bi vam samo na smetnji i brzo bi među vas smutnju ubacili..." (Et-Tevbe, 47.) <br>▪️U predaji od Abdullaha
+            ibn Amra se prenosi da je Muhammed, sallallahu aleji ve sellem rekao: "Allah je zapisao određenje (kader) i
+            sudbinu stvorenja na pedeset hiljada godina prije nego će stvoriti nebesa i Zemlju. I tada je Njegov Arš
+            (prijestolje) bio nad vodom." (Muslim) <br>
+            <br>❔Pitanja za razmišljanje❔ <br>1. Da li si uvijek svjestan/a da Allah sve zna? <br>2.Da li si nekada
+            odustao/la od nekog djela kojim Allah nije zadovoljan, a silno si to želio/la? <br>3. Da li se trudiš
+            sticati novo znanje svaki dan? <br>4.Opominješ li sebe na važnost i obavezu sticanja (i prenošenja) znanja?
+            <br>5.Podučavaš li nekoga onome što znaš? <br>6.Da li si se ikada kod sebe primijetio/la makar trun oholosti
+            (i na trenutak) zbog onoga što znaš? <br>7.Koliko često zahvaljuješ na blagodati znanja Onome Koji je
+            Sveznajući?<br>
+            <br>Esselamu alejkum. 😊 <br>Danas ćemo spomenuti još nekoliko stvari. <br>▫️Ibn Redžeb, rahimehullah, je
+            rekao: "Jedan čovjek se naljutio na svoju ženu, a zatim joj ljutito kazao: 'Uđi u kuću i zatvori sva vrata
+            za sobom!', a nakon toga ju je upitao: 'Da li su neka vrata ostala otvorena?'. Ona je odgovorila: "Da! Vrata
+            koja su između nas i Allaha." Nakon toga se čovjek odljutio. " <br>
+            <br>💬Imaj na umu da te tvoj Gospodar uvijek posmatra, kada uradiš loše i kada uradiš dobro. Zbog toga,
+            potrudi se da svako loše djelo zamijeniš jednim dobrim djelom, kao što Allah u Kur'anu kaže: إِنَّ
+            ٱلۡحَسَنَٰتِ يُذۡهِبۡنَ ٱلسَّيِّـَٔاتِۚ <br>"Dobra djela zaista poništavaju hrđava. To je pouka za one koji
+            pouku žele." (Hud, 114.) <br>Vrata pokajanja su ti otvorena sve dok se tvoja duša ne rastane od tijela.
+            Zato, požuri Mu, pokaj se i trudi se da radiš samo ono čime je On zadovoljan. <br>
+            <br>▫️Ne tuguj, ako Gospodar tvoj zna sve, ako u svakom trenutku zna tvoje stanje, tvoje potrebe, onda zna i
+            za tvoju tugu, bol, čežnju...Prije nego se obratiš ljudima, obrati se Onom Koji te najbolje poznaje, Koji te
+            stvorio i Koji zna šta je za tebe najbolje. <br>
+            <br>Sada, kada znamo koja je vrijednost znanja, potrudimo se što više učiti ovu kur'ansku dovu. <br>&nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ⬇️⬇️⬇️<br>
+          </p>
+          <img src="images/viber_image_2021-03-24_19-22-09.jpg" alt="" class="u-image u-image-default u-image-1"
+            data-image-width="1108" data-image-height="1600">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-left u-clearfix u-image u-section-22" id="ime19" data-image-width="1080"
+    data-image-height="1350">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-50 u-shape-round u-group-1">
+        <div class="u-container-layout u-valign-bottom u-container-layout-1">
+          <p class="u-text u-text-1">19. El-Fettāh (الْفَتَّاحُ) – Onaj Koji rješava sve vrste teškoća i problema <br>
+            <br>💌Kada te iskušenja dunjalučka pritisnu pa se učini da je olakšanje daleko, prisjeti se da imaš svog
+            Svemogućeg Gospodara. Doista Mu nije teško obasuti te blagodatima, a možda te od toga dijeli samo jedna
+            iskrena dova. <br>Niko te ne može zaštititi kao Gospodar. <br> Niko te ne može obradovati kao Gospodar.
+            <br>Niko te bolje ne poznaje od Njega. Pa zašto pomoć tražiš od drugih mimo Njega? <br>
+            <br>🔸U arapskom jeziku "el-fettāh" označava „otvaranje“, što je suprotno zatvaranju, „el-feth“ znači:
+            osloboditi se prepreka, stvari koje su nam zatvorene, tako da nam postanu dostupne i otvorene <br>
+            <br>🍂Takav je primjer siromašnog čovjeka kojem Allah, tebāreke ve te'ālā, otvori načine kako da se obogati,
+            a i čovjeka koji je u teškoći, pa mu je Uzvišeni Allah otkloni i podari izlaz iz te situacije. Sve se to
+            naziva „fethom“. <br>
+            <br>🔸"Feth" ima značenje i otvaranja Allahovih riznica i spuštanja Njegove milosti i blagodati iskrenim
+            robovima. <br>
+            <br>"Feth" znači i Allahovo otvaranje i davanje mudrosti, znanja i razumijevanja vjere onome kome On hoće.
+            <br>
+            <br>🔸"El-Fettāh" ima značenje pomagača ili onoga ko donosi pobjedu: <br>
+            <br>وَلَيَنْصُرَنَّ اللَّهُ مَنْ يَنْصُرُهُ ۗ إِنَّ اللَّهَ لَقَوِيٌّ عَزِيزٌ <br>„Allah će sigurno pomoći
+            one koji vjeru Njegovu pomažu – ta Allah je zaista moćan i silan“ (El-Hadždž, 40). <br>
+            <br>🔸Također, "feth" može značiti i kaznu i nedaću robovima koji se odaju griješenju i udalje od Njegove
+            upute i Njegovih propisa i pridržavanja vjere. <br>
+            <br>🖋️Allahovo uzvišeno ime El-Fettāh spomenuto je u obliku jednine jednom u Kur'anu <br>
+            <br>&nbsp;&nbsp;قُلْ يَجْمَعُ بَيْنَنَا رَبُّنَا ثُمَّ يَفْتَحُ بَيْنَنَا بِالْحَقِّ وَهُوَ الْفَتَّاحُ
+            الْعَلِيمُ <br>„Reci: 'Gospodar naš će nas sabrati i onda nam pravedno presuditi. On je sudija pravedni,
+            sveznajući.'“ (Sebe', 26) <br>
+            <br>Isto tako, spomenuto je u obliku množine, i to u riječima Allaha, subhanehu ve te'ālā: <br>
+            <br>رَبَّنَا افْتَحْ بَيْنَنَا وَبَيْنَ قَوْمِنَا بِالْحَقِّ وَأَنْتَ خَيْرُ الْفَاتِحِينَ <br>„Gospodaru
+            naš! Presudi između nas i između naroda našeg s Istinom, a Ti si Najbolji od sudaca!“ (El-A'raf, 89) <br>
+            <br>Hattabi, rahimehullah, rekao je: „El-Fettāh je El-Hakīm – Sudija pravedni koji sudi i presuđuje između
+            Svojih robova. Nekada ima značenje: Onaj Koji otvara robovima ono što im je nedokučivo i zatvoreno, što je u
+            vezi sa njihovim stvarima i potrebama. To je poput otvaranja puteva koji vode do rizka (opskrbe), ili do
+            Njegove milosti kojom obasipa Svoje robove. Allah otvara njihova srca i njihove oči, kako bi vidjeli pravu
+            istinu. Nekada ima značenje: El-Fātih – Onaj Koji daje pobjedu i pomoć...“ <br>
+            <br>💭Razmislimo: <br>1.&nbsp;&nbsp;Svoje brige najčešće podijelimo sa ljudima koji nas najviše poznaju.
+            Međutim, Uzvišeni Allah nas poznaje i bolje od tih ljudi, zna naše strahove, želje, naša stanja. Kome se
+            češće i kome se najprije obraćamo – ljudima ili Uzvišenom Allahu? <br>
+            <br>2.&nbsp;&nbsp;Kada vidiš neku blagodat kod ljudi, nema potrebe da im na njoj zavidiš. Razmisli, možda ti
+            tu blagodat samo nisi tražio od Allaha. Umjesto zavisti, traži od Allaha da ti je podari. Uputi dovu za te
+            ljude – osjetit ćeš kako te Allah obasipa bereketom na svim poljima. <br>
+            <br>3.&nbsp;Imamo samo jedan život. Zar ga ne uljepšati osloncem na Allaha? <br>Zasigurno nećemo biti
+            razočarani.<br>
+            <br>Uzvišeni Allah je El-Fettāh - Onaj Koji rješava sve vrste problema i teškoća. <br>
+            <br>Kada ponovo u džamije bez straha svi budemo kročili, ukrasimo taj i svaki naredni odlazak jednim
+            sunnetom Allahovog Poslanika, alejhisselam. <br>
+            <br>Neka tada tišinu zamijeni naše šaputanje ovih dova. ✨<br>
+          </p>
+          <img src="images/viber_image_2021-03-21_17-13-24.jpg" alt=""
+            class="u-expanded-width-xs u-image u-image-default u-image-1" data-image-width="1132"
+            data-image-height="1600">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-left u-clearfix u-image u-section-23" id="ime18" data-image-width="1080"
+    data-image-height="1350">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-50 u-shape-round u-group-1">
+        <div class="u-container-layout u-valign-top u-container-layout-1">
+          <p class="u-text u-text-1">18. Er- Rezzāk ( اَلرَّزَّاقُ )- Onaj koji daje opskrbu (nafaku) svim Svojim
+            robovima i stvorenjima, Opskrbljivač. <br>
+            <br>📌Jezičko značenje: er- rizk znači: opskrba, hrana, nafaka. <br>
+            <br>📌Allahovo uzvišeno ime Er- Rezzāk se spominje na jednom mjestu u Kur'anu: <br>
+            <br>„Uistinu, Allah- On je Opskrbljivač, Onaj koji snagu veliku posjeduje, Jaki!“ (Ez-Zarijat, 58) <br>
+            <br>Allahovo uzvišeno ime Er- Rāzik se spominje na pet mijesta u Kur'anu. <br>
+            <br>„A Allah je najbolji Opskrbitelj.“ (El- Džumu'a, 11) <br>
+            <br>📌Uzvišeni Allah opskrbljuje sve svoje robove i sva Svoja stvorenja, bez izuzetka. On daje nafaku i
+            vjernicima i nevjernicima, iz Svoje ogromne milosti. On određuje ko će biti bogat, a ko siromašan. <br>
+            <br>📌 Allah nam daje sve što imamo. Nafaka nije samo imetak. Nafaka je i zdravlje, dobar bračni drug,
+            dijete, znanje... A najveća nafaka je uputa, naša vjera u Uzvišenog Allaha. <br>
+            <br>📌 Recept za nafaku: <br>- Bogobojaznost i pokornost Uzvišenom Allahu. <br>- Čuvanje od grijeha (grijesi
+            su najveći uzrok uskraćivanja nafake). <br>- Zahvaljivanje Njemu. <br>- Činjenje istigfara. <br>- Činjenje
+            onog što je do robova, a ostalo prepuštanje Njemu i čvrsto ubjeđenje da je On Er- Rezzāk- Jedini koji daje
+            opskrbu. <br>
+            <br>💭 Kada bismo bili svjesni da nam jedino Allah dž.š. može nešto dati ili oduzeti, naše brige za
+            dunjalukom bi prestale. Činiti ono što je do nas kao robova, a ostalo prepustiti Njemu- recept je za
+            bezbrižan dunjalučki život. <br>
+            <br>S obzirom da je naša nafaka shodno hadisu Poslanika Muhammeda s.a.v.s. određena još dok smo bili u
+            utrobama majki i da čovjek neće umrijeti dok ne potroši svoju nafaku- čemu onda naša briga za nafakom i
+            strah od sutra? <br>
+            <br>Naša je dužnost da robujemo Uzvišenom Allahu, a Njegovo obećanje je da će nas opskrbiti. <br>
+            <br>💭 Pitanja za razmišljanje: <br>- Brinemo li se puno za našu nafaku? <br>- Da li se bojimo da nam ljudi
+            mogu uskratiti nešto što nam je od Allaha određeno? <br>- Zahvaljujemo li Allahu na onome što nam
+            svakodnevno daje iz riznica Svojih? <br>- Kada smo zadnji put bili gladni? Jesmo li zaboravili koliko zaista
+            i
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-left u-clearfix u-image u-section-24" id="ime17" data-image-width="1080"
+    data-image-height="1350">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-50 u-shape-round u-group-1">
+        <div class="u-container-layout u-valign-top u-container-layout-1">
+          <p class="u-text u-text-1">17. El-Vehhāb (الْوَهَّابُ) - Onaj koji mnogo poklanja <br>
+            <br>✒ Jezičko značenje: Vehebe leke šej'en ili: Vehebtu lehu hibete znači: "Dao sam mu, poklonio sam mu."
+            <br>Za onoga koji puno daruje i poklanja poklone, kaže se: Redžulun vehhabun ili vehubun i vehhabetun. <br>
+            <br>📌 Allahovo uzvišeno ime El-Vehhāb spominje se tri puta u Kur'anu. <br>Jednom u suri Ali Imran, a dva
+            puta u suri Sâd. <br>
+            <br>📌 ZNAČENJE IMENA EL-VEHHĀB KADA SE ODNOSI NA UZVIŠENOG ALLAHA <br>
+            <br>- Ibn Džerir, rahimehullah, rekao je: ,,To znači: Ti si Onaj koji daje Svojim robovima uspjeh. Ti činiš
+            postojanim u Svojoj vjeri one koji potvrđuju i vjeruju u Tvoju knjigu i Tvoje poslanike." <br>
+            <br>📌 El-Hattabi , rahimehullah, rekao je: ,,El Vehhāb je Onaj daje(daruje) bez traženja naknade." <br>
+            <br>📌 Allah u Kur'anu kaže: ,,O ljudi! Sjetite se blagodati Allahove prema vama! Ima li ikakav stvoritelj
+            pored Allaha da vas opskrbljuje iz neba i sa Zemlje? Nema boga osim Njega, pa kuda se odmećete?" (Fatir)
+            <br>
+            <br>📌 RAZLIKA IZMEĐU DARA KOJI POKLANJA STVORENJE I ALLAHOVOG POKLONA <br>
+            <br>- Hattabi, rahimehullah, rekao je: ,,Svaki onaj koji nešto pokloni drugome, od dunjalučkih stvari,
+            naziva se vehhab (darivalac). Imenom El-Vehhāb ne zaslužuje da se nazove niko osim Onoga koji mnogo
+            raznovrsno daje. On daruje u svakoj prilici i Njegovo darivanje se ne prekida. Stvorenja su u stanju da
+            daruju u određenim trenucima, i to određene stvari, ali nisu u stanju da bolesnom podare zdravlje, niti su u
+            stanju da onome ko nema djece podare dijete, niti zalutalom uputu. <br>
+            <br>✒ Kada razmišljamo o ovom uzvišenom imenu i o tome šta Gospodar može učiniti za nas dok trepnemo okom,
+            sjetimo se samo Zekerijje, a.s., kojem je Gospodar podario potomstvo dok je još bio star, a supruga mu bila
+            nerotkinja. Sve te okolnosti nisu spriječile Zekerijju, a.s., da upućuje dovu Gospodaru, jer je on bio
+            svjestan Allahove snage i moći. Bio je svjestan da je On El-Vehhāb. <br>Svako od nas želi da bude bolja
+            verzija sebe i da doživi mnoge uspjehe, a naš uspjeh zavisi samo od Njega; svako od nas ima određene
+            probleme u životu za koje bismo voljeli da se riješe, kako bismo živjeli koliko toliko u rahatluku, a samo
+            On može otkloniti ono što nas muči u prsima; svako od nas ima skrivene želje i ambicije za koje samo On zna,
+            i za koje želimo da se ostvare kako bismo živjeli naše snove još na dunjaluku, a On je Onaj koji kaže:
+            ,,Budi", i ono bude. <br>
+            <br>🌱 Razmisli malo o ovom Allahovom imenu. <br>Večeras, u zadnjoj trećini noći, podigni ruke i reci svome
+            Gospodaru sve što te muči i sve što želiš da ti On podari sa čvrstim ubjeđenjem da je on El-Vehhāb i da si
+            ti njegov rob kojeg On mnogo voli. Ništa nije veliko ni teško za našeg Gospodara, dokle god Mu se pokoravaš
+            i od Njega pomoć tražiš. On je u stanju preko noći da promijeni tvoj život na bolje. On je u stanju da te
+            preko noći izvede iz mizerije i ružnih okolnosti u kojima se trenutno nalaziš, a ništa zauzvrat neće
+            tražiti... <br>
+            <br>Pa zar ne biti zahvalan Njemu?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-left u-clearfix u-image u-section-25" id="ime16" data-image-width="1080"
+    data-image-height="1350">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+      <div
+        class="u-container-style u-custom-color-9 u-group u-opacity u-opacity-80 u-radius-50 u-shape-round u-group-1">
+        <div class="u-container-layout u-valign-top u-container-layout-1">
+          <p class="u-text u-text-1">16. El-Kahhar(القَهّارُ) i El-Kahir(القَاهِرُ) -Onaj Koji pokorava, Nepobjedivi
+            <br>
+            <br>✒️Jezičko značenje ovih imena je: "pobijediti, poraziti nekoga, ukrotiti, potčiniti." Razlika između ova
+            dva imena je u tome što ime El-Kahhar ima pojačano značenje, tj. Onog koji mnogo i jako savladava. <br>
+            <br>💬"El-Kahir je Onaj koji određuje Svojim stvorenjima ono što On želi, pa se to i desi - poput teškoća,
+            tereta, žalosti i preokupacija. On je Taj koji im oduzima život ili dio njihovog tijela i niko nije u
+            mogućnosti da se tome suprotstavi, niti je u stanju da izađe iz okvira te odredbe koja mu je određena."
+            (El-Hulejmi) <br>
+            <br>💭U novom valu pandemije testira se naše pouzdanje u Njega i Njegovu odredbu. Imamo mogućnost
+            primijetiti koliko smo slabi i nemoćni i koliko je On Uzvišeni silan i mudar. Koliko god mi znali, koliko
+            god nešto ne željeli, koliko god se čuvali. Sve to pretekne odredba El-Kahira. Mnogi su iskušani bolešću,
+            mnogi odlaze sa dunjaluka i niko od nas ne zna kada je naš red. <br>"A kada dođe nekom od vas smrt,
+            izaslanici Naši mu dušu uzmu, a oni nikad propust ne prave."(6:61) <br>Početak ovog ajeta glasi:"I On je
+            El-Kahir nad robovima svojim. I On šalje nad vama čuvare." <br>Imamo Čuvara, imamo čuvare, imamo Zaštitnika,
+            imamo zaštitare. <br>Bojiš li se i dalje? <br>
+            <br>💪Praktična primjena ovog Allahovog imena se ogleda u konstantnom motrenju na naš nefs(ego), koji se
+            svim silama trudi da ostanemo isti, da smo u strahu, da se uzdižemo iznad drugih, da nas zadrži od
+            postizanja naših dobrih ciljeva. Najteža borba je u nama samima. Najteže je napredovati pod stalnim teretom
+            loših navika, koje su se ustalile u nefsu i koje mu tako prijaju, a koje ni ne primjećujemo. A loša navika
+            je i djelo, i riječ, i misao. I sve se mogu ispraviti.🌺 <br>
+            <br>🌱Razmisli malo o ovom Allahovom imenu. <br>1. Postoje li stvari kojih se plašiš, a na koje ne možeš
+            utjecati? Zapiši ih na papir! <br>2. Koliko vjerujemo u Allaha, a koliko vjerujemo Allahu? <br>3. Znaš li
+            uopšte koje su tvoje loše navike? Šta bi kod sebe promijenio/la? Šta čekaš?&nbsp;
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-image u-section-26" id="sec-deb4" data-image-width="1280"
+    data-image-height="861">
+    <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+      <div
+        class="u-align-center-md u-align-center-sm u-align-center-xs u-container-style u-custom-color-9 u-expanded-width-xs u-group u-opacity u-opacity-60 u-group-1">
+        <div class="u-container-layout u-valign-top-xs u-container-layout-1">
+          <div class="u-align-left u-expanded-width-sm u-expanded-width-xs u-video u-video-1">
+            <div class="embed-responsive embed-responsive-1">
+              <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item"
+                src="https://www.youtube.com/embed/tTao6LY05zw?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0"
+                frameborder="0" allowfullscreen=""></iframe>
+            </div>
+          </div>
+          <h2 class="u-text u-text-1">Sami Yusuf - The 99 Names&nbsp;<br>(أسماء الله الحسنى)
+          </h2>
+          <p class="u-text u-text-2">
+            <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-text-hover-palette-1-base u-btn-1"
+              href="https://www.youtube.com/watch?v=tTao6LY05zw" target="_blank">Možete poslušati 99 Allahovih imena i
+              na Youtube-u&nbsp; ♡</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style class="u-overlap-style">
+    .u-overlap:not(.u-sticky-scroll) .u-header {
+      background-color: #f6c3b8 !important
+    }
+  </style>
+
+
+
+  <footer class="u-clearfix u-footer u-grey-80" id="sec-7cc2">
+    <div
+      class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
+      <img src="images/viber_image_2021-03-18_14-56-271.png" alt="" class="u-image u-image-default u-image-1"
+        data-image-width="416" data-image-height="200">
+    </div>
+  </footer>
+  <section class="u-backlink u-clearfix u-grey-80">
+    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+      <span>Website Templates</span>
+    </a>
+    <p class="u-text">
+      <span>created with</span>
+    </p>
+    <a class="u-link" href="https://nicepage.com/" target="_blank">
+      <span>Website Builder Software</span>
+    </a>.
+  </section>
+</body>
+
+</html>
