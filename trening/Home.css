@@ -7979,7 +7979,10 @@
   background-image: url("images/plavoBehar.jpg");
   background-position: 50% 50%;
 }
-
+.u-section-41 {
+  background-image: url("images/more.jpg");
+  background-position: 50% 50%;
+}
 .u-section-40 .u-sheet-1 {
   min-height: 3054px;
 }
@@ -8005,6 +8008,30 @@
   margin: -47px 41px 0 auto;
 }
 
+.u-section-41 .u-sheet-1 {
+  min-height: 3054px;
+}
+
+.u-section-41 .u-group-1 {
+  width: 985px;
+  min-height: 2082px;
+  margin: 77px auto 60px;
+}
+
+.u-section-41 .u-container-layout-1 {
+  padding: 30px;
+}
+
+.u-section-41 .u-text-1 {
+  font-weight: 700;
+  margin: 0;
+}
+
+.u-section-41 .u-image-1 {
+  width: 391px;
+  height: 533px;
+  margin: -47px 41px 0 auto;
+}
 @media (max-width: 1199px) {
   .u-section-40 .u-sheet-1 {
     min-height: 2518px;
@@ -8015,6 +8042,17 @@
   }
 
   .u-section-40 .u-image-1 {
+    height: 532px;
+  }
+  .u-section-41 .u-sheet-1 {
+    min-height: 2518px;
+  }
+
+  .u-section-41 .u-group-1 {
+    width: 940px;
+  }
+
+  .u-section-41 .u-image-1 {
     height: 532px;
   }
 }
@@ -8035,6 +8073,21 @@
     margin-top: 0;
     margin-right: 21px;
   }
+  .u-section-41 .u-sheet-1 {
+    min-height: 1929px;
+  }
+
+  .u-section-41 .u-group-1 {
+    width: 700px;
+    min-height: 2440px;
+  }
+
+  .u-section-41 .u-image-1 {
+    width: 344px;
+    height: 486px;
+    margin-top: 0;
+    margin-right: 21px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -8047,6 +8100,18 @@
   }
 
   .u-section-40 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .u-section-41 .u-sheet-1 {
+    min-height: 1447px;
+  }
+
+  .u-section-41 .u-group-1 {
+    width: 540px;
+  }
+
+  .u-section-41 .u-container-layout-1 {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -8069,6 +8134,27 @@
   }
 
   .u-section-40 .u-image-1 {
+    height: 384px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+  .u-section-41 .u-sheet-1 {
+    min-height: 911px;
+  }
+
+  .u-section-41 .u-group-1 {
+    width: 292px;
+    min-height: 3904px;
+    margin-left: 5px;
+  }
+
+  .u-section-41 .u-text-1 {
+    width: auto;
+    margin-right: -8px;
+  }
+
+  .u-section-41 .u-image-1 {
     height: 384px;
     margin-right: initial;
     margin-left: initial;
