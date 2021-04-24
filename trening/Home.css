@@ -5005,6 +5005,14 @@
   margin: -566px auto 60px 238px;
 */}
 
+.u-section-191 .u-group-1 {
+  background-image: url("images/pozadina8.png");
+}
+.u-section-191 .u-image-1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+height: 600px; }
 
 @media (max-width: 1199px) {
   .u-section-190 .u-sheet-1 {
@@ -5071,6 +5079,7 @@
     width: 540px;
     margin-left: 0;
     margin-right: 0;
+    
   }
 
   .u-section-190 .u-video-1 {
@@ -5090,6 +5099,7 @@
 }
 
 @media (max-width: 575px) {
+ 
   .u-section-190 {
     background-position: 0% 60.2%;
     background-size: auto;
@@ -5142,6 +5152,9 @@
     width: 200px;
     margin: -566px auto 60px 238px;
   */}
+  .u-section-191 .u-image-1{
+    height: 450px;
+  }
 }
 .u-section-20 {
   background-position: 50% 0%;
